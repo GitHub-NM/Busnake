@@ -4,18 +4,20 @@
     <LangVersion>latest</LangVersion>
     <CscToolPath>C:\Program Files\Unity\Hub\Editor\2019.1.12f1\Editor\Data\Tools\RoslynScripts</CscToolPath>
     <CscToolExe>unity_csc.bat</CscToolExe>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{229DA6AF-3A1F-4FA5-BF7C-85079C7DDA9E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
   </PropertyGroup>
@@ -64,7 +66,9 @@
   <ItemGroup>
     <Compile Include="Assets\Script\AnimalStack.cs" />
     <Compile Include="Assets\Script\Animation.cs" />
+    <Compile Include="Assets\Script\BusnakeAnim.cs" />
     <Compile Include="Assets\Script\BusnakeMove.cs" />
+    <Compile Include="Assets\Script\BusnakeMoveAnim.cs" />
     <Compile Include="Assets\Script\BusnakeStack.cs" />
     <Compile Include="Assets\Script\SignJudg.cs" />
     <Compile Include="Assets\Script\SpriteChange.cs" />
