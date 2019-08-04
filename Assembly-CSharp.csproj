@@ -68,6 +68,8 @@
     <Compile Include="Assets\Script\BusnakeStack.cs" />
     <Compile Include="Assets\Script\SignJudg.cs" />
     <Compile Include="Assets\Script\SpriteChange.cs" />
+    <None Include="Assets\Busnake_Asset\BGM\ReadMe.txt" />
+    <None Include="Assets\Busnake_Asset\SE\StarPopUp\ReadMe.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/shun8/Documents/Unity Projects/Busnake/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
