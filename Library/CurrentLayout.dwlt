@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 8
-    y: 51
+    x: -228
+    y: 250
     width: 1350
     height: 669
   m_ShowMode: 4
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 272}
   m_MaxSize: {x: 22012, y: 10022}
   vertical: 1
-  controlID: 117
+  controlID: 99
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 272}
   m_MaxSize: {x: 22012, y: 10022}
   vertical: 0
-  controlID: 118
+  controlID: 100
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -300,10 +300,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 831
-    y: 81
-    width: 247
-    height: 600
+    x: 825
+    y: 20
+    width: 245
+    height: 597
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -434,10 +434,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1080
-    y: 81
+    x: 1074
+    y: 20
     width: 276
-    height: 600
+    height: 597
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
   m_ObjectsLockedBeforeSerialization: []
@@ -470,10 +470,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 8
-    y: 81
-    width: 202
-    height: 600
+    x: 0
+    y: 20
+    width: 200
+    height: 597
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
@@ -525,10 +525,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 210
-    y: 81
-    width: 619
-    height: 600
+    x: 204
+    y: 20
+    width: 617
+    height: 597
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: 3e410807088e07443b864b05252c4602
@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 458.7406, y: 192.16492, z: -96.32547}
     speed: 2
-    m_Value: {x: 455.80652, y: 193.66893, z: -93.20808}
+    m_Value: {x: 458.7406, y: 192.16492, z: -96.32547}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -577,7 +577,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 724.5962
     speed: 2
-    m_Value: 693.3935
+    m_Value: 724.5962
   m_Ortho:
     m_Target: 1
     speed: 2
