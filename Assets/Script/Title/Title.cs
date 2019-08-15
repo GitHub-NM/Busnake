@@ -16,7 +16,7 @@ public class Title : MonoBehaviour
     {
         //Mouseclick,EnterKey,SpacekeyでTitle→Selectにシーン遷移
         //PCの入力モードが半角になっていないとSpaceKeyが反応しない(かなしい)
-        if (Input.GetMouseButtonDown(0)|| Input.GetKey(KeyCode.Return)|| Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Return)|| Input.GetKey(KeyCode.Space))
         {
             SceneManager.LoadScene("StageSelect");
         }

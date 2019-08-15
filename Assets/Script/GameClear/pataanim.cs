@@ -19,7 +19,6 @@ public class pataanim : MonoBehaviour
         {
             transform.Rotate(new Vector3(0, 0, 0));
         }
-
-        Debug.Log(transform.localEulerAngles.x);
+        
     }
 }

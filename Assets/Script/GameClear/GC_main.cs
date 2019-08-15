@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GC_main : MonoBehaviour
 {
@@ -55,6 +56,8 @@ public class GC_main : MonoBehaviour
     //画面サイズ取得用
     //float Screenwidth;
     float Screenheight;
+    //現在のScene取得(リトライ用)
+    string nowSceneName;
     int Order;
     float scoretimer;
     float startimer;
@@ -75,7 +78,7 @@ public class GC_main : MonoBehaviour
         lightposnow = lightpos.next;
         //Screenwidth = Screen.width;
         Screenheight = Screen.height;
-        initBoardpos = new Vector3(0, ((-Screenheight) - (GCBoardObj.GetComponent<RectTransform>().sizeDelta.x / 2)), 0);
+        initBoardpos = new Vector3(0, ((-Screenheight) - (GCBoardObj.GetComponent<RectTransform>().sizeDelta.x / 2)-25), 0);
         Debug.Log(GCBoardObj.GetComponent<RectTransform>().sizeDelta.x);
         endBoardpos = new Vector3(0, 0, 0);
         timeStepBoard = 0.0f;
@@ -94,6 +97,7 @@ public class GC_main : MonoBehaviour
         Score_oneObj.SetActive(false);
         Score_tenObj.SetActive(false);
         Score_hundredObj.SetActive(false);
+        nowSceneName = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -204,14 +208,23 @@ public class GC_main : MonoBehaviour
             if (lightposnow == lightpos.next)
             {
                 GClightObj.transform.localPosition = GClightnextpos;
+
             }
             else if (lightposnow == lightpos.retry)
             {
                 GClightObj.transform.localPosition = GClightretrypos;
+                if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
+                {
+                    SceneManager.LoadScene(nowSceneName);
+                }
             }
             else if (lightposnow == lightpos.title)
             {
                 GClightObj.transform.localPosition = GClighttitlepos;
+                if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
+                {
+                    SceneManager.LoadScene("Title");
+                }
             }
         }
     }
