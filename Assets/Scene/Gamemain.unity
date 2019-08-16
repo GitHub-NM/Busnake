@@ -121,6 +121,7 @@ NavMeshSettings:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!1 &58902228
 GameObject:
   m_ObjectHideFlags: 0
@@ -3250,6 +3251,9 @@ MonoBehaviour:
 =======
 --- !u!1001 &8046630470236502779
 >>>>>>> 006ec50beed183a114af60d04e9f343ae5154f3e
+=======
+--- !u!1001 &8046630470236502779
+>>>>>>> 006ec50beed183a114af60d04e9f343ae5154f3e
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -3281,6 +3285,7 @@ PrefabInstance:
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
     - target: {fileID: 1923109105611761548, guid: c6afe7fccf934824eb7abdfa4ce89761,
         type: 3}
@@ -3385,6 +3390,9 @@ PrefabInstance:
 =======
     - target: {fileID: 1071407754571879198, guid: 7fbf5a6e96491ee479df565cb93ee6c9,
 >>>>>>> 006ec50beed183a114af60d04e9f343ae5154f3e
+=======
+    - target: {fileID: 1071407754571879198, guid: 7fbf5a6e96491ee479df565cb93ee6c9,
+>>>>>>> 006ec50beed183a114af60d04e9f343ae5154f3e
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
@@ -3419,6 +3427,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
     - target: {fileID: 7203867658039470449, guid: ac0e8b5540e4e1c47851250d1c025035,
         type: 3}
@@ -3470,6 +3479,8 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+=======
+>>>>>>> 006ec50beed183a114af60d04e9f343ae5154f3e
 =======
 >>>>>>> 006ec50beed183a114af60d04e9f343ae5154f3e
     m_RemovedComponents: []
