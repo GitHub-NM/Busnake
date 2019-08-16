@@ -55,17 +55,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Script\AnimalStack.cs" />
-     <Compile Include="Assets\Script\Animation.cs" />
-     <Compile Include="Assets\Script\BusnakeAnim.cs" />
-     <Compile Include="Assets\Script\BusnakeMove.cs" />
-     <Compile Include="Assets\Script\BusnakeMoveAnim.cs" />
-     <Compile Include="Assets\Script\BusnakeStack.cs" />
      <Compile Include="Assets\Script\GameClear\GC_main.cs" />
      <Compile Include="Assets\Script\GameClear\pataanim.cs" />
+     <Compile Include="Assets\Script\GameMain\AnimalStack.cs" />
+     <Compile Include="Assets\Script\GameMain\Animation.cs" />
+     <Compile Include="Assets\Script\GameMain\BusnakeAnim.cs" />
+     <Compile Include="Assets\Script\GameMain\BusnakeMoveAnim.cs" />
+     <Compile Include="Assets\Script\GameMain\BusnakeStack.cs" />
+     <Compile Include="Assets\Script\GameMain\SignJudg.cs" />
+     <Compile Include="Assets\Script\GameMain\SpriteChange.cs" />
      <Compile Include="Assets\Script\Select\Select.cs" />
-     <Compile Include="Assets\Script\SignJudg.cs" />
-     <Compile Include="Assets\Script\SpriteChange.cs" />
      <Compile Include="Assets\Script\Title\Title.cs" />
      <None Include="Assets\Busnake_Asset\BGM\ReadMe.txt" />
      <None Include="Assets\Busnake_Asset\SE\StarPopUp\ReadMe.txt" />
