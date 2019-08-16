@@ -13,6 +13,7 @@ public class BusnakeAnim : MonoBehaviour
     private float lerpValue;
     public float lerpValueplus;
     private bool bTrigger;
+    private bool bTriggerleap;
     public int Direction;
     public int OldDirection;
 
@@ -23,15 +24,14 @@ public class BusnakeAnim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(gameObject.name);
-
         // 初期化
-        parentgameObject = transform.parent.gameObject;
-        if(parentgameObject.name == "BusnakeObject")
-        {
-            parentgameObject = GameObject.Find("Busnake_head");
-        }
+        //parentgameObject = transform.parent.gameObject;
+        //if(parentgameObject.name == "BusnakeObject")
+        //{
+        //    parentgameObject = GameObject.Find("Busnake_head");
+        //}
         bTrigger = false;
+        bTriggerleap = false;   
         lerpValue = 0.0f;
         lerpValueplus = 0.05f;
     }
@@ -47,13 +47,16 @@ public class BusnakeAnim : MonoBehaviour
         recttransform = GetComponent<RectTransform>();
 
         // 頭が移動したら
-        if (BusnakeMoveAnim.bTrigger)
+        if (!bTriggerleap && BusnakeMoveAnim.bTrigger)
+        { bTriggerleap = true; }
+
+        // 補完が終わるまで継続
+        if (bTriggerleap)       
         {
             if (!bTrigger)
             {
                 q1 = new Vector3(recttransform.position.x, recttransform.position.y, recttransform.position.z);
                 q2 = new Vector3(parentgameObject.GetComponent<RectTransform>().position.x, parentgameObject.GetComponent<RectTransform>().position.y, parentgameObject.GetComponent<RectTransform>().position.z);
-                lerpValue += lerpValueplus;
                 bTrigger = true;
 
                 // 体の先頭を分ける
@@ -68,8 +71,6 @@ public class BusnakeAnim : MonoBehaviour
                     Direction = parentgameObject.GetComponent<BusnakeAnim>().OldDirection;
                 }
 
-                // DIrectionの中身をちゃんと入れる（多分ちゃんと入ってない）
-
 
                 switch (Direction)
                 {
@@ -81,21 +82,21 @@ public class BusnakeAnim : MonoBehaviour
                             // 体の先頭を分ける
                             if (parentgameObject.name == "Busnake_head")
                             {// 頭の向き取得
-                                if (2 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                if (2 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
                                 }
-                                else if (3 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                else if (3 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
                                 }
                                 else
                                 {
@@ -105,21 +106,21 @@ public class BusnakeAnim : MonoBehaviour
                             }
                             else
                             {
-                                if (2 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                if (2 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
                                 }
-                                else if (3 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                else if (3 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f,-90f);
                                 }
                                 else
                                 {
@@ -133,21 +134,21 @@ public class BusnakeAnim : MonoBehaviour
                             // 体の先頭を分ける
                             if (parentgameObject.name == "Busnake_head")
                             {// 頭の向き取得
-                                if (2 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                if (2 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
                                 }
-                                else if (3 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                else if (3 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
                                 }
                                 else
                                 {
@@ -160,21 +161,21 @@ public class BusnakeAnim : MonoBehaviour
                             }
                             else
                             {
-                                if (2 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                if (2 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
                                 }
-                                else if (3 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                else if (3 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
                                 }
                                 else
                                 {
@@ -197,21 +198,21 @@ public class BusnakeAnim : MonoBehaviour
                             // 体の先頭を分ける
                             if (parentgameObject.name == "Busnake_head")
                             {// 頭の向き取得
-                                if (2 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                if (2 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {                                    
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                  }
-                                else if (3 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                else if (3 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                                 }
                                 else
                                 {
@@ -221,21 +222,21 @@ public class BusnakeAnim : MonoBehaviour
                             }
                             else
                             {
-                                if (2 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                if (2 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
-                                else if (3 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                else if (3 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                                 }
                                 else
                                 {
@@ -250,21 +251,21 @@ public class BusnakeAnim : MonoBehaviour
                             // 体の先頭を分ける
                             if (parentgameObject.name == "Busnake_head")
                             {// 頭の向き取得
-                                if (2 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                if (2 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
-                                else if (3 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                else if (3 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                                 }
                                 else
                                 {
@@ -277,21 +278,21 @@ public class BusnakeAnim : MonoBehaviour
                             }
                             else
                             {
-                                if (2 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                if (2 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
-                                else if (3 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                else if (3 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                                 }
                                 else
                                 {
@@ -336,33 +337,27 @@ public class BusnakeAnim : MonoBehaviour
                             }
                             else
                             {
-                                if (2 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
-                                {
-                                    // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
-                                }
-                                else if (0 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                if (0 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                                 }
-                                else if (1 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                else if (1 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
                                 }
                                 else
                                 {
                                     // 向きを変える
                                     transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
-
                             }
                         }
                         else
@@ -370,13 +365,13 @@ public class BusnakeAnim : MonoBehaviour
                             // 体の先頭を分ける
                             if (parentgameObject.name == "Busnake_head")
                             {// 頭の向き取得
-                                if (0 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                if (0 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                                 }
                                 else if (1 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
                                 {
@@ -384,7 +379,7 @@ public class BusnakeAnim : MonoBehaviour
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
                                 }
                                 else
                                 {
@@ -397,21 +392,21 @@ public class BusnakeAnim : MonoBehaviour
                             }
                             else
                             {
-                                if (0 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                if (0 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 180f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                                 }
-                                else if (1 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                else if (1 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
                                 }
                                 else
                                 {
@@ -421,7 +416,6 @@ public class BusnakeAnim : MonoBehaviour
                                     // 向きを変える
                                     transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
-
                             }
                         }
                         break;
@@ -433,60 +427,50 @@ public class BusnakeAnim : MonoBehaviour
                             // 体の先頭を分ける
                             if (parentgameObject.name == "Busnake_head")
                             {// 頭の向き取得
-                                if (3 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
-                                {
-                                    // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
-                                }
-                                else if (0 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                if (0 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
-                                else if (1 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                else if (1 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, -180f);
                                 }
                                 else
                                 {
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
                             }
                             else
                             {
-                                if (3 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
-                                {
-                                    // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
-                                }
-                                else if (0 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                if (0 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
-                                else if (1 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                else if (1 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, -180f);
                                 }
                                 else
                                 {
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
 
                             }
@@ -496,21 +480,21 @@ public class BusnakeAnim : MonoBehaviour
                             // 体の先頭を分ける
                             if (parentgameObject.name == "Busnake_head")
                             {// 頭の向き取得
-                                if (0 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                if (0 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
-                                else if (1 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                else if (1 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, -180f);
                                 }
                                 else
                                 {
@@ -518,26 +502,26 @@ public class BusnakeAnim : MonoBehaviour
                                     GetComponent<Image>().sprite = PlayerTexNumber[1];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
                             }
                             else
                             {
-                                if (0 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                if (0 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
-                                else if (1 == (int)parentgameObject.GetComponent<BusnakeAnim>().OldDirection)
+                                else if (1 == (int)parentgameObject.GetComponent<BusnakeAnim>().Direction)
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, -180f);
                                 }
                                 else
                                 {
@@ -545,9 +529,8 @@ public class BusnakeAnim : MonoBehaviour
                                     GetComponent<Image>().sprite = PlayerTexNumber[1];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, 90f);
                                 }
-
                             }
                         }
                         break;
@@ -561,6 +544,11 @@ public class BusnakeAnim : MonoBehaviour
             // 線形補間
             recttransform.position = Vector3.Lerp(q1, q2, lerpValue);
 
+            // 値が1.0f以上になったらやめる
+            if (lerpValue >= 1.0f)
+            {
+                bTriggerleap = false;
+            }
         }
         else
         {
