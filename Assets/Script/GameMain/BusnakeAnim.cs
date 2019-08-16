@@ -373,7 +373,7 @@ public class BusnakeAnim : MonoBehaviour
                                     // 向きを変える
                                     transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                                 }
-                                else if (1 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection())
+                                else if (1 == (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetDirection())
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
