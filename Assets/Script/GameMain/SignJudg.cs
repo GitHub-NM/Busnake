@@ -35,7 +35,6 @@ public class SignJudg : MonoBehaviour
             if (nSignjudganimal == collision.gameObject.GetComponent<BusnakeMoveAnim>().bStack.stack.Peek().GetAnimals())
             {
                 collision.gameObject.GetComponent<BusnakeMoveAnim>().bStack.stack.Pop();
-                collision.gameObject.GetComponent<BusnakeMoveAnim>().AnimalObj.[collision.gameObject.GetComponent<BusnakeMoveAnim>().nCnt] = null;
                 Debug.Log("当たった、そして中身を抜いた");
             }
             else if (collision.gameObject.GetComponent<BusnakeMoveAnim>().bStack.stack.Peek() == null)
