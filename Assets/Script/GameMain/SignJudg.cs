@@ -25,27 +25,27 @@ public class SignJudg : MonoBehaviour
         // プレイヤーと当たったら
         if(collision.gameObject.tag == "Player")
         {
-           // // 中身がないとき
-           // if (collision.gameObject.GetComponent<BusnakeMove>().bStack.stack.Count == 0)
-           // {
-           //     Debug.Log("中身がない"); return;
-           // }
+            // 中身がないとき
+            if (collision.gameObject.GetComponent<BusnakeMoveAnim>().bStack.stack.Count == 0)
+            {
+                Debug.Log("中身がない"); return;
+            }
 
-           //// スタックに入ってるのが一致したら
-           //if(nSignjudganimal ==  collision.gameObject.GetComponent<BusnakeMove>().bStack.stack.Peek().GetAnimals())
-           // {
-           //     collision.gameObject.GetComponent<BusnakeMove>().bStack.stack.Pop();
-           //     Debug.Log("当たった");
-           // }
-           // else if (collision.gameObject.GetComponent<BusnakeMove>().bStack.stack.Peek() == null)
-           // {
-           //     Debug.Log("中身がないよ");
-           // }
-           // else
-           // {
-           //     Debug.Log("違うやつが当たった");
-           // }
-
+            // スタックに入ってるのが一致したら
+            if (nSignjudganimal == collision.gameObject.GetComponent<BusnakeMoveAnim>().bStack.stack.Peek().GetAnimals())
+            {
+                collision.gameObject.GetComponent<BusnakeMoveAnim>().bStack.stack.Pop();
+                collision.gameObject.GetComponent<BusnakeMoveAnim>().AnimalObj.[collision.gameObject.GetComponent<BusnakeMoveAnim>().nCnt] = null;
+                Debug.Log("当たった、そして中身を抜いた");
+            }
+            else if (collision.gameObject.GetComponent<BusnakeMoveAnim>().bStack.stack.Peek() == null)
+            {
+                Debug.Log("中身がないよ");
+            }
+            else
+            {
+                Debug.Log("違うやつが当たった");
+            }
         }
     }
 }
