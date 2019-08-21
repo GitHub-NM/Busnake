@@ -4,21 +4,45 @@ using UnityEngine;
 
 public class pataanim : MonoBehaviour
 {
+
+    float angle = 1;
+    int pataanim_movenum = 0;
+    float pataanim_speed = 5.0f;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (transform.localEulerAngles.x>=-180)
-        transform.Rotate(new Vector3(-5, 0, 0));
-        else if(transform.localEulerAngles.x >= 0)
+        transform.rotation = Quaternion.Euler(angle, 0, 0.0f);
+        switch (pataanim_movenum)
         {
-            transform.Rotate(new Vector3(0, 0, 0));
+            case 0:
+                if (angle < 180 && angle >= 0)
+                {
+                    angle += 5f;
+                }
+                else
+                {
+                    angle = -180f;
+                    pataanim_movenum = 1;
+                }
+                    break;
+            case 1:
+                if (angle < 0 && angle >= -180)
+                {
+                    angle += 5f;
+                }
+                else
+                {
+                    angle = 0f;
+                }
+                break;
         }
+
         
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class GC_main : MonoBehaviour
 {
     [SerializeField]
-    GameObject GCTextObj;
+    GameObject GCTextObj;//ゲームクリア！のtextimageObj
     [SerializeField]
     GameObject GCBoardObj;
     [SerializeField]
@@ -18,6 +18,12 @@ public class GC_main : MonoBehaviour
     GameObject Score_tenObj;
     [SerializeField]
     GameObject Score_hundredObj;
+    [SerializeField]
+    GameObject pata_oneObj;
+    [SerializeField]
+    GameObject pata_tenObj;
+    [SerializeField]
+    GameObject pata_hundredObj;
     [SerializeField]
     GameObject star_0Obj;
     [SerializeField]
@@ -226,6 +232,35 @@ public class GC_main : MonoBehaviour
                     SceneManager.LoadScene("Title");
                 }
             }
+        }
+    }
+    void pataanim(GameObject pataObj, float angle, int pataanim_movenum)
+    {
+        float pataanim_speed = 5.0f;
+        pataObj.transform.rotation = Quaternion.Euler(angle, 0, 0.0f);
+        switch (pataanim_movenum)
+        {
+            case 0:
+                if (angle < 180 && angle >= 0)
+                {
+                    angle += pataanim_speed;
+                }
+                else
+                {
+                    angle = -180f;
+                    pataanim_movenum = 1;
+                }
+                break;
+            case 1:
+                if (angle < 0 && angle >= -180)
+                {
+                    angle += pataanim_speed;
+                }
+                else
+                {
+                    angle = 0f;
+                }
+                break;
         }
     }
 }
