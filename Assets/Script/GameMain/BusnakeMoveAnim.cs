@@ -12,10 +12,9 @@ public class BusnakeMoveAnim : MonoBehaviour
     public StateDirection stateDirection;
     public StateDirection oldstateDirection;
     public BusnakeStack bStack;
-    public GameObject[] AnimalObj = new GameObject[10];
-    public int nCnt;
+    public GameObject[] bodys;
     // private
-    private RectTransform recttransform;
+    public Vector3 recttransform;
     private float lerpValue;
     private float ImageSize;
 
@@ -42,10 +41,9 @@ public class BusnakeMoveAnim : MonoBehaviour
         stateDirection = StateDirection.STATE_RIGHT;
         oldstateDirection = stateDirection;
         ImageSize = 32.0f;
-        nCnt = 0;
 
         // ポジション宣言
-        recttransform = this.GetComponent<RectTransform>();
+        recttransform = GetComponent<RectTransform>().localPosition;
 
     }
 
@@ -56,8 +54,8 @@ public class BusnakeMoveAnim : MonoBehaviour
         // キー入力待ち
         if (!bTrigger && Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {//下
-            q1 = new Vector3(recttransform.position.x, recttransform.position.y, recttransform.position.z);
-            q2 = new Vector3(recttransform.position.x, recttransform.position.y - ImageSize, recttransform.position.z);
+            q1 = new Vector3(recttransform.x, recttransform.y, recttransform.z);
+            q2 = new Vector3(recttransform.x, recttransform.y - ImageSize, recttransform.z);
 
             // 顔の向きを変える
             transform.rotation = Quaternion.Euler(0f, 0f, -90f);
@@ -71,8 +69,8 @@ public class BusnakeMoveAnim : MonoBehaviour
         }
         else if (!bTrigger && Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {//上
-            q1 = new Vector3(recttransform.position.x, recttransform.position.y, recttransform.position.z);
-            q2 = new Vector3(recttransform.position.x, recttransform.position.y + ImageSize, recttransform.position.z);
+            q1 = new Vector3(recttransform.x, recttransform.y, recttransform.z);
+            q2 = new Vector3(recttransform.x, recttransform.y + ImageSize, recttransform.z);
 
             // 顔の向きを変える
             transform.rotation = Quaternion.Euler(0f, 0f, 90f);
@@ -87,8 +85,8 @@ public class BusnakeMoveAnim : MonoBehaviour
 
         if (!bTrigger && Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {//左
-            q1 = new Vector3(recttransform.position.x, recttransform.position.y, recttransform.position.z);
-            q2 = new Vector3(recttransform.position.x - ImageSize, recttransform.position.y, recttransform.position.z);
+            q1 = new Vector3(recttransform.x, recttransform.y, recttransform.z);
+            q2 = new Vector3(recttransform.x - ImageSize, recttransform.y, recttransform.z);
 
             // 顔の向きを変える
             transform.rotation = Quaternion.Euler(0f, -180f, 0f);
@@ -102,8 +100,8 @@ public class BusnakeMoveAnim : MonoBehaviour
         }
         else if (!bTrigger && Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {//右
-            q1 = new Vector3(recttransform.position.x, recttransform.position.y, recttransform.position.z);
-            q2 = new Vector3(recttransform.position.x + ImageSize, recttransform.position.y, recttransform.position.z);
+            q1 = new Vector3(recttransform.x, recttransform.y, recttransform.z);
+            q2 = new Vector3(recttransform.x + ImageSize, recttransform.y, recttransform.z);
 
             // 顔の向きを変える
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
@@ -114,13 +112,15 @@ public class BusnakeMoveAnim : MonoBehaviour
 
             // トリガーON
             bTrigger = true;
+
         }
 
         // トリガーがONになったら
         if (bTrigger)
         {
             // 線形補間
-            recttransform.position = Vector3.Lerp(q1, q2, lerpValue);
+            recttransform = Vector3.Lerp(q1, q2, lerpValue);
+            GetComponent<RectTransform>().localPosition = recttransform;
 
             // 値を足す
             lerpValue += lerpValueplus;
@@ -132,7 +132,8 @@ public class BusnakeMoveAnim : MonoBehaviour
                 lerpValue = 1.0f;
                 
                 // 線形補間
-                recttransform.position = Vector3.Lerp(q1, q2, lerpValue);
+                recttransform = Vector3.Lerp(q1, q2, lerpValue);
+                GetComponent<RectTransform>().localPosition = recttransform;
 
                 // 初期化
                 bTrigger = false;
@@ -148,17 +149,16 @@ public class BusnakeMoveAnim : MonoBehaviour
         {
             // 当たったオブジェクトを変更をかける
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false; // 判定を消す
-            collision.gameObject.GetComponent<Image>().enabled = false;
+            collision.gameObject.GetComponent<Image>().sprite = collision.gameObject.GetComponent<AnimalStack>().sprite[1];
 
+            // ポジションを移動させる          
+            collision.gameObject.transform.localPosition = bodys[bStack.stack.Count].transform.localPosition;
+            
             // 子オブジェクトにする
-            collision.gameObject.transform.parent = transform;
+            collision.gameObject.transform.parent = bodys[bStack.stack.Count].transform;
 
             // スタックする
             bStack.stack.Push(collision.gameObject.GetComponent<AnimalStack>());
-
-            // オブジェクトを格納する
-            AnimalObj[AnimalObj.Length] = collision.gameObject;
-            nCnt++;
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SignJudg : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class SignJudg : MonoBehaviour
             // スタックに入ってるのが一致したら
             if (nSignjudganimal == collision.gameObject.GetComponent<BusnakeMoveAnim>().bStack.stack.Peek().GetAnimals())
             {
-                collision.gameObject.GetComponent<BusnakeMoveAnim>().bStack.stack.Pop();
+                collision.gameObject.GetComponent<BusnakeMoveAnim>().bStack.stack.Pop().gameObject.GetComponent<Image>().enabled = false;
                 Debug.Log("当たった、そして中身を抜いた");
             }
             else if (collision.gameObject.GetComponent<BusnakeMoveAnim>().bStack.stack.Peek() == null)

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 242412807676531643}
   - component: {fileID: 242412807676531636}
   - component: {fileID: 242412807676531637}
-  m_Layer: 5
-  m_Name: Busnake_body
+  m_Layer: 0
+  m_Name: Busnake_body4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,11 +31,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 242412809174675526}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32, y: 0}
+  m_AnchoredPosition: {x: -160, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &242412807676531643
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d60c8d00b2240c649b8c115dc776d74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentgameObject: {fileID: 242412809645473029}
+  parentgameObject: {fileID: 6413023645948424861}
   BusnakeMoveAnim: {fileID: 242412809645473035}
   PlayerTexNumber:
   - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
@@ -125,11 +125,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 242412809645473028}
+  - {fileID: 1384433138958782024}
+  - {fileID: 2956513842488128952}
+  - {fileID: 6588811520842218432}
+  - {fileID: 8269200077138755527}
   - {fileID: 242412807676531638}
-  - {fileID: 6955714229166445734}
-  - {fileID: 4199500216560608560}
-  - {fileID: 4288577737718700383}
-  - {fileID: 8107548740019784159}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -298,7 +298,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 31.558418, y: 16.073708}
   m_EdgeRadius: 0
---- !u!1 &860661270834506238
+--- !u!1 &1365446864248770482
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,120 +306,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4199500216560608560}
-  - component: {fileID: 8414037899713115292}
-  - component: {fileID: 7866197294572362931}
-  - component: {fileID: 7340299362135135570}
-  m_Layer: 5
-  m_Name: Busnake_body2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &4199500216560608560
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860661270834506238}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 242412809174675526}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -96, y: 0}
-  m_SizeDelta: {x: 32, y: 32}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8414037899713115292
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860661270834506238}
-  m_CullTransparentMesh: 0
---- !u!114 &7866197294572362931
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860661270834506238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!114 &7340299362135135570
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860661270834506238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d60c8d00b2240c649b8c115dc776d74f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentgameObject: {fileID: 3534138298339129793}
-  BusnakeMoveAnim: {fileID: 242412809645473035}
-  PlayerTexNumber:
-  - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
-  - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
-  - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
-  lerpValueplus: 0
-  Direction: 0
-  OldDirection: 0
---- !u!1 &3534138298339129793
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6955714229166445734}
-  - component: {fileID: 7150703025402764884}
-  - component: {fileID: 2765999925204833160}
-  - component: {fileID: 7971152158054504670}
-  m_Layer: 5
+  - component: {fileID: 2956513842488128952}
+  - component: {fileID: 7037864950612181754}
+  - component: {fileID: 8275260266030784713}
+  - component: {fileID: 1844923520241927025}
+  m_Layer: 2
   m_Name: Busnake_body1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &6955714229166445734
+--- !u!224 &2956513842488128952
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534138298339129793}
+  m_GameObject: {fileID: 1365446864248770482}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -432,21 +336,21 @@ RectTransform:
   m_AnchoredPosition: {x: -64, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7150703025402764884
+--- !u!222 &7037864950612181754
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534138298339129793}
+  m_GameObject: {fileID: 1365446864248770482}
   m_CullTransparentMesh: 0
---- !u!114 &2765999925204833160
+--- !u!114 &8275260266030784713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534138298339129793}
+  m_GameObject: {fileID: 1365446864248770482}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -469,19 +373,19 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &7971152158054504670
+--- !u!114 &1844923520241927025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3534138298339129793}
+  m_GameObject: {fileID: 1365446864248770482}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d60c8d00b2240c649b8c115dc776d74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentgameObject: {fileID: 242412807676531639}
+  parentgameObject: {fileID: 5192036701891430207}
   BusnakeMoveAnim: {fileID: 242412809645473035}
   PlayerTexNumber:
   - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
@@ -490,7 +394,7 @@ MonoBehaviour:
   lerpValueplus: 0
   Direction: 0
   OldDirection: 0
---- !u!1 &5994379487535701561
+--- !u!1 &5192036701891430207
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -498,51 +402,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8107548740019784159}
-  - component: {fileID: 5325904565574247214}
-  - component: {fileID: 7216721331258640890}
-  - component: {fileID: 2487098168136045494}
-  m_Layer: 5
-  m_Name: Busnake_body4
+  - component: {fileID: 1384433138958782024}
+  - component: {fileID: 8092826022856106282}
+  - component: {fileID: 4720424635728551876}
+  - component: {fileID: 5381113201006251260}
+  m_Layer: 1
+  m_Name: Busnake_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &8107548740019784159
+--- !u!224 &1384433138958782024
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5994379487535701561}
+  m_GameObject: {fileID: 5192036701891430207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 242412809174675526}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -160, y: 0}
+  m_AnchoredPosition: {x: -32, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5325904565574247214
+--- !u!222 &8092826022856106282
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5994379487535701561}
+  m_GameObject: {fileID: 5192036701891430207}
   m_CullTransparentMesh: 0
---- !u!114 &7216721331258640890
+--- !u!114 &4720424635728551876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5994379487535701561}
+  m_GameObject: {fileID: 5192036701891430207}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -565,19 +469,19 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &2487098168136045494
+--- !u!114 &5381113201006251260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5994379487535701561}
+  m_GameObject: {fileID: 5192036701891430207}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d60c8d00b2240c649b8c115dc776d74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentgameObject: {fileID: 7346243387355519000}
+  parentgameObject: {fileID: 242412809645473029}
   BusnakeMoveAnim: {fileID: 242412809645473035}
   PlayerTexNumber:
   - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
@@ -586,7 +490,7 @@ MonoBehaviour:
   lerpValueplus: 0
   Direction: 0
   OldDirection: 0
---- !u!1 &7346243387355519000
+--- !u!1 &6413023645948424861
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -594,24 +498,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4288577737718700383}
-  - component: {fileID: 8474289873471347854}
-  - component: {fileID: 2655421759045276704}
-  - component: {fileID: 8415987846690368800}
-  m_Layer: 5
+  - component: {fileID: 8269200077138755527}
+  - component: {fileID: 5998387424499643956}
+  - component: {fileID: 870880322844535176}
+  - component: {fileID: 4211944895563238909}
+  m_Layer: 8
   m_Name: Busnake_body3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &4288577737718700383
+--- !u!224 &8269200077138755527
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7346243387355519000}
+  m_GameObject: {fileID: 6413023645948424861}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -624,21 +528,21 @@ RectTransform:
   m_AnchoredPosition: {x: -128, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8474289873471347854
+--- !u!222 &5998387424499643956
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7346243387355519000}
+  m_GameObject: {fileID: 6413023645948424861}
   m_CullTransparentMesh: 0
---- !u!114 &2655421759045276704
+--- !u!114 &870880322844535176
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7346243387355519000}
+  m_GameObject: {fileID: 6413023645948424861}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -661,19 +565,115 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &8415987846690368800
+--- !u!114 &4211944895563238909
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7346243387355519000}
+  m_GameObject: {fileID: 6413023645948424861}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d60c8d00b2240c649b8c115dc776d74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentgameObject: {fileID: 860661270834506238}
+  parentgameObject: {fileID: 6511515613801802403}
+  BusnakeMoveAnim: {fileID: 242412809645473035}
+  PlayerTexNumber:
+  - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
+  - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
+  - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
+  lerpValueplus: 0
+  Direction: 0
+  OldDirection: 0
+--- !u!1 &6511515613801802403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6588811520842218432}
+  - component: {fileID: 8737296496044913831}
+  - component: {fileID: 2514948117780221786}
+  - component: {fileID: 8468320849809684073}
+  m_Layer: 5
+  m_Name: Busnake_body2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &6588811520842218432
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511515613801802403}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 242412809174675526}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -96, y: 0}
+  m_SizeDelta: {x: 32, y: 32}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8737296496044913831
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511515613801802403}
+  m_CullTransparentMesh: 0
+--- !u!114 &2514948117780221786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511515613801802403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!114 &8468320849809684073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6511515613801802403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d60c8d00b2240c649b8c115dc776d74f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentgameObject: {fileID: 1365446864248770482}
   BusnakeMoveAnim: {fileID: 242412809645473035}
   PlayerTexNumber:
   - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}

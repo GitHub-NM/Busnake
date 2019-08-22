@@ -7,15 +7,17 @@ public class BusnakeAnim : MonoBehaviour
 {
     // メンバ変数定義
     public GameObject parentgameObject;
-    private RectTransform recttransform;
     public BusnakeMoveAnim BusnakeMoveAnim;
     public Sprite[] PlayerTexNumber;
-    private float lerpValue;
+    public Vector3 SavePos;
     public float lerpValueplus;
-    private bool bTrigger;
-    private bool bTriggerleap;
     public int Direction;
     public int OldDirection;
+
+    private Vector3 recttransform;
+    private float lerpValue;
+    private bool bTrigger;
+    private bool bTriggerleap;
 
     // クォータニオンの準備
     private Vector3 q1;
@@ -25,11 +27,7 @@ public class BusnakeAnim : MonoBehaviour
     void Start()
     {
         // 初期化
-        //parentgameObject = transform.parent.gameObject;
-        //if(parentgameObject.name == "BusnakeObject")
-        //{
-        //    parentgameObject = GameObject.Find("Busnake_head");
-        //}
+        SavePos = GetComponent<RectTransform>().localPosition;
         bTrigger = false;
         bTriggerleap = false;   
         lerpValue = 0.0f;
@@ -39,34 +37,36 @@ public class BusnakeAnim : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // 回転を子オブジェクトで固定
-        //gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-        //gameObject.transform.rotation = Quaternion.Euler(gameObject.transform.rotation.x, gameObject.transform.rotation.y, gameObject.transform.rotation.z);
-
         // ポジション宣言
-        recttransform = GetComponent<RectTransform>();
+        recttransform = GetComponent<RectTransform>().localPosition;
 
         // 頭が移動したら
         if (!bTriggerleap && BusnakeMoveAnim.bTrigger)
-        { bTriggerleap = true; }
+        {
+            bTriggerleap = true;
+        }
 
         // 補完が終わるまで継続
         if (bTriggerleap)       
         {
             if (!bTrigger)
             {
-                q1 = new Vector3(recttransform.position.x, recttransform.position.y, recttransform.position.z);
-                q2 = new Vector3(parentgameObject.GetComponent<RectTransform>().position.x, parentgameObject.GetComponent<RectTransform>().position.y, parentgameObject.GetComponent<RectTransform>().position.z);
                 bTrigger = true;
 
                 // 体の先頭を分ける
                 if (parentgameObject.name == "Busnake_head")
                 {// 頭の向き取得
+                    q1 = new Vector3(recttransform.x, recttransform.y, recttransform.z);
+                    q2 = new Vector3(parentgameObject.GetComponent<BusnakeMoveAnim>().recttransform.x, parentgameObject.GetComponent<BusnakeMoveAnim>().recttransform.y, parentgameObject.GetComponent<BusnakeMoveAnim>().recttransform.z);
+
                     OldDirection = Direction;
                     Direction = (int)parentgameObject.GetComponent<BusnakeMoveAnim>().GetOldDirection();
                 }
                 else
                 {// 親のオブジェクトの向きを取得
+                    q1 = new Vector3(recttransform.x, recttransform.y, recttransform.z);
+                    q2 = new Vector3(parentgameObject.GetComponent<BusnakeAnim>().SavePos.x, parentgameObject.GetComponent<BusnakeAnim>().SavePos.y, parentgameObject.GetComponent<BusnakeAnim>().SavePos.z);
+
                     OldDirection = Direction;
                     Direction = parentgameObject.GetComponent<BusnakeAnim>().OldDirection;
                 }
@@ -542,12 +542,21 @@ public class BusnakeAnim : MonoBehaviour
             lerpValue += 0.05f;
 
             // 線形補間
-            recttransform.position = Vector3.Lerp(q1, q2, lerpValue);
+            recttransform = Vector3.Lerp(q1, q2, lerpValue);
+            GetComponent<RectTransform>().localPosition = recttransform;
 
             // 値が1.0f以上になったらやめる
             if (lerpValue >= 1.0f)
             {
-                bTriggerleap = false;
+                // 正規化
+                lerpValue = 1.0f;
+                recttransform = Vector3.Lerp(q1, q2, lerpValue);
+                GetComponent<RectTransform>().localPosition = recttransform;
+
+                SavePos = GetComponent<RectTransform>().localPosition;
+
+                lerpValue = 0.0f;
+                bTriggerleap = false;  
             }
         }
         else

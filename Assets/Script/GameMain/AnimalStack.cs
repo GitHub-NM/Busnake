@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnimalStack : MonoBehaviour
 {
+    public  Sprite[] sprite;
     private int nAnimal;
 
     // Start is called before the first frame update
