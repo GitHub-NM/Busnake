@@ -187,9 +187,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7809335510350758582, guid: b06f3b824fff03d479420481dd56ad89,
+    - target: {fileID: 5246677198060030029, guid: b06f3b824fff03d479420481dd56ad89,
         type: 3}
-      propertyPath: m_UiScaleMode
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445635038455754352, guid: b06f3b824fff03d479420481dd56ad89,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5246677198060030028, guid: b06f3b824fff03d479420481dd56ad89,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7809335509487663442, guid: b06f3b824fff03d479420481dd56ad89,
@@ -198,6 +208,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7809335510040513297, guid: b06f3b824fff03d479420481dd56ad89,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7809335510350758582, guid: b06f3b824fff03d479420481dd56ad89,
         type: 3}
       propertyPath: m_UiScaleMode
       value: 0
@@ -222,11 +237,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2033404538}
     m_Modifications:
-    - target: {fileID: 242412809174675527, guid: a59060628f2976941be604d458fb8af4,
-        type: 3}
-      propertyPath: m_Name
-      value: BusnakeObject
-      objectReference: {fileID: 0}
     - target: {fileID: 242412809174675526, guid: a59060628f2976941be604d458fb8af4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -281,6 +291,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 242412809174675527, guid: a59060628f2976941be604d458fb8af4,
+        type: 3}
+      propertyPath: m_Name
+      value: BusnakeObject
       objectReference: {fileID: 0}
     - target: {fileID: 242412809645473035, guid: a59060628f2976941be604d458fb8af4,
         type: 3}
