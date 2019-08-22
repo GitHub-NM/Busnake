@@ -2,27 +2,75 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Title : MonoBehaviour
 {
+    [SerializeField]
+    GameObject Startlight;
+    [SerializeField]
+    GameObject Endlight;
+    [SerializeField]
+    GameObject StartBoard;
+    [SerializeField]
+    GameObject EndBoard;
+    int lightposnow;//0=はじめる1=終わる
+    [SerializeField]
+    Sprite lightonimage;
+    [SerializeField]
+    Sprite lightoffimage;
+    [SerializeField]
+    Sprite Boardonimage;
+    [SerializeField]
+    Sprite Boardoffimage;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        lightposnow = 0;
+        Startlight.GetComponent<Image>().sprite = lightonimage;
+        Endlight.GetComponent<Image>().sprite = lightoffimage;
+
+        StartBoard.GetComponent<Image>().sprite = Boardonimage;
+        EndBoard.GetComponent<Image>().sprite = Boardoffimage;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Mouseclick,EnterKey,SpacekeyでTitle→Selectにシーン遷移
+        //EnterKey,SpacekeyでTitle→Selectにシーン遷移
         //PCの入力モードが半角になっていないとSpaceKeyが反応しない(かなしい)
-        if (Input.GetKey(KeyCode.Return)|| Input.GetKey(KeyCode.Space))
+        if (lightposnow == 0 && (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space)))
         {
             SceneManager.LoadScene("StageSelect");
         }
-        
-        //初回起動のみ続きからを表示しない
-        //続きからを選んだ場合、セーブデータにアクセスしてデータをロードする処理を作る
-       
+        else if (lightposnow == 1 && (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space)))
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#elif UNITY_STANDALONE
+    UnityEngine.Application.Quit();
+#endif
+
+            Application.Quit();
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow) && lightposnow != 0)
+        {
+            lightposnow = 0;
+            Startlight.GetComponent<Image>().sprite = lightonimage;
+            Endlight.GetComponent<Image>().sprite = lightoffimage;
+
+            StartBoard.GetComponent<Image>().sprite = Boardonimage;
+            EndBoard.GetComponent<Image>().sprite = Boardoffimage;
+        }
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && lightposnow != 1)
+        {
+            lightposnow = 1;
+            Startlight.GetComponent<Image>().sprite = lightoffimage;
+            Endlight.GetComponent<Image>().sprite = lightonimage;
+
+            StartBoard.GetComponent<Image>().sprite = Boardoffimage;
+            EndBoard.GetComponent<Image>().sprite = Boardonimage;
+        }
     }
 }

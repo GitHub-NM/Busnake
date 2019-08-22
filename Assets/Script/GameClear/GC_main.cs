@@ -30,6 +30,12 @@ public class GC_main : MonoBehaviour
     GameObject star_1Obj;
     [SerializeField]
     GameObject star_2Obj;
+    [SerializeField]
+    GameObject pata_star_0Obj;
+    [SerializeField]
+    GameObject pata_star_1Obj;
+    [SerializeField]
+    GameObject pata_star_2Obj;
 
     [SerializeField]
     Vector3 GClightnextpos;
@@ -152,15 +158,19 @@ public class GC_main : MonoBehaviour
 
                 Score_oneObj.SetActive(true);
                 Score_oneObj.GetComponent<Image>().sprite = ScoreSprites[Scorenum % 10];
+                pata_oneObj.GetComponent<pataanim>().enabled = true;
+                
                 if (scoretimer >= 1.0f)
                 {
                     Score_tenObj.SetActive(true);
                     Score_tenObj.GetComponent<Image>().sprite = ScoreSprites[(Scorenum % 100) / 10];
+                    pata_tenObj.GetComponent<pataanim>().enabled = true;
                 }
                 if (scoretimer >= 2.0f)
                 {
                     Score_hundredObj.SetActive(true);
                     Score_hundredObj.GetComponent<Image>().sprite = ScoreSprites[Scorenum / 100];
+                    pata_hundredObj.GetComponent<pataanim>().enabled = true;
                     Order = 4;
                 }
                     break;
@@ -184,14 +194,17 @@ public class GC_main : MonoBehaviour
                 if(startimer >= 1.0f)
                 {
                     star_0Obj.SetActive(true);
+                    pata_star_0Obj.GetComponent<pataanim>().enabled = true;
                 }
                 if (startimer >= 2.0f)
                 {
                     star_1Obj.SetActive(true);
+                    pata_star_1Obj.GetComponent<pataanim>().enabled = true;
                 }
                 if (startimer >= 3.0f)
                 {
                     star_2Obj.SetActive(true);
+                    pata_star_2Obj.GetComponent<pataanim>().enabled = true;
                 }
 
                 break;
@@ -234,33 +247,5 @@ public class GC_main : MonoBehaviour
             }
         }
     }
-    void pataanim(GameObject pataObj, float angle, int pataanim_movenum)
-    {
-        float pataanim_speed = 5.0f;
-        pataObj.transform.rotation = Quaternion.Euler(angle, 0, 0.0f);
-        switch (pataanim_movenum)
-        {
-            case 0:
-                if (angle < 180 && angle >= 0)
-                {
-                    angle += pataanim_speed;
-                }
-                else
-                {
-                    angle = -180f;
-                    pataanim_movenum = 1;
-                }
-                break;
-            case 1:
-                if (angle < 0 && angle >= -180)
-                {
-                    angle += pataanim_speed;
-                }
-                else
-                {
-                    angle = 0f;
-                }
-                break;
-        }
-    }
+   
 }
