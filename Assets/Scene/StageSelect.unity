@@ -623,7 +623,7 @@ GameObject:
   - component: {fileID: 488153556}
   - component: {fileID: 488153555}
   m_Layer: 5
-  m_Name: Text_Stage3
+  m_Name: Text_Stage4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1286,6 +1286,7 @@ RectTransform:
   - {fileID: 488153554}
   - {fileID: 1117637884}
   - {fileID: 2103123619}
+  - {fileID: 1195170995}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1316,11 +1317,19 @@ MonoBehaviour:
   Board_Stage2: {fileID: 588760854}
   Board_Stage3: {fileID: 1570346560}
   Board_Title: {fileID: 1473252467}
+  Arrowright: {fileID: 2103123618}
+  Arrowleft: {fileID: 1195170992}
   lightonimage: {fileID: 21300000, guid: 547c9ab4f2ef84d4b8e571d72b5e208a, type: 3}
   lightoffimage: {fileID: 21300000, guid: 6f522fcb3b8557b4faf46ba6ba723c6c, type: 3}
   Boardonimage: {fileID: 21300000, guid: f6fdd859f553dd842b774132f5eaba77, type: 3}
   Boardoffimage: {fileID: 21300000, guid: a8be269b1e326d34e84c6ee3bb847e32, type: 3}
+  Stage_1text: {fileID: 2130391667}
+  Stage_2text: {fileID: 1703272594}
+  Stage_3text: {fileID: 1752686506}
+  Stage_4text: {fileID: 488153555}
   lightposnow: 0
+  Worldnow: 0
+  Stagenow: 0
 --- !u!1 &921870592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1474,6 +1483,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117637883}
   m_CullTransparentMesh: 0
+--- !u!1 &1195170992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1195170995}
+  - component: {fileID: 1195170994}
+  - component: {fileID: 1195170993}
+  m_Layer: 5
+  m_Name: Arrow_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1195170993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195170992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 8a516bedb4cfc374ea4cbdef756cf941, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1195170994
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195170992}
+  m_CullTransparentMesh: 0
+--- !u!224 &1195170995
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195170992}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.70134234, y: 0.70134234, z: 0.70134234}
+  m_Children: []
+  m_Father: {fileID: 913000181}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -236, y: -24}
+  m_SizeDelta: {x: 70, y: 63}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1197934803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2242,7 +2325,7 @@ GameObject:
   - component: {fileID: 1703272595}
   - component: {fileID: 1703272594}
   m_Layer: 5
-  m_Name: Text _Stage1
+  m_Name: Text _Stage2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2395,7 +2478,7 @@ GameObject:
   - component: {fileID: 1752686507}
   - component: {fileID: 1752686506}
   m_Layer: 5
-  m_Name: Text _Stage2
+  m_Name: Text _Stage3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2844,7 +2927,7 @@ GameObject:
   - component: {fileID: 2103123621}
   - component: {fileID: 2103123620}
   m_Layer: 5
-  m_Name: Arrow
+  m_Name: Arrow_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2859,14 +2942,14 @@ RectTransform:
   m_GameObject: {fileID: 2103123618}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.796983, y: 0.796983, z: 0.796983}
+  m_LocalScale: {x: 0.701345, y: 0.701345, z: 0.701345}
   m_Children: []
   m_Father: {fileID: 913000181}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 234, y: -24}
+  m_AnchoredPosition: {x: 235, y: -24}
   m_SizeDelta: {x: 70, y: 63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2103123620
@@ -2918,7 +3001,7 @@ GameObject:
   - component: {fileID: 2130391668}
   - component: {fileID: 2130391667}
   m_Layer: 5
-  m_Name: Text_Stage0
+  m_Name: Text_Stage1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
