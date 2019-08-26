@@ -6,7 +6,7 @@ public class SignManager : MonoBehaviour
 {
     // メンバ宣言
     public SignJudg[] signJudgs;
-    private bool goal;
+    public bool goal;
 
     void Start()
     {

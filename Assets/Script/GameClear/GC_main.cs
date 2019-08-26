@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class GC_main : MonoBehaviour
 {
     [SerializeField]
+    SignManager SignManager;
+    [SerializeField]
     GameObject GCTextObj;//ゲームクリア！のtextimageObj
     [SerializeField]
     GameObject GCBoardObj;
@@ -120,7 +122,7 @@ public class GC_main : MonoBehaviour
 
             case 0:
 
-                if (Input.GetKey(KeyCode.Space))
+                if (SignManager.goal)
                 {
                     Order = 1;
                 }

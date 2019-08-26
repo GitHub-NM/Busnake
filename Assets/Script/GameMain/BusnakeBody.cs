@@ -29,7 +29,7 @@ public class BusnakeBody : MonoBehaviour
         // 初期化
         SavePos = GetComponent<RectTransform>().localPosition;
         bTrigger = false;
-        bTriggerleap = false;   
+        bTriggerleap = false;
         lerpValue = 0.0f;
         lerpValueplus = 0.05f;
     }
@@ -47,11 +47,11 @@ public class BusnakeBody : MonoBehaviour
         }
 
         // 補完が終わるまで継続
-        if (bTriggerleap)       
+        if (bTriggerleap)
         {
             if (!bTrigger)
             {
-            	Debug.Log(name);
+                Debug.Log(name);
                 bTrigger = true;
 
                 // 体の先頭を分ける
@@ -121,7 +121,7 @@ public class BusnakeBody : MonoBehaviour
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
-                                    transform.rotation = Quaternion.Euler(0f, 0f,-90f);
+                                    transform.rotation = Quaternion.Euler(0f, 0f, -90f);
                                 }
                                 else
                                 {
@@ -200,13 +200,13 @@ public class BusnakeBody : MonoBehaviour
                             if (parentgameObject.name == "Busnake_head")
                             {// 頭の向き取得
                                 if (2 == (int)parentgameObject.GetComponent<BusnakeHead>().GetDirection())
-                                {                                    
+                                {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
 
                                     // 向きを変える
                                     transform.rotation = Quaternion.Euler(0f, 0f, 90f);
-                                 }
+                                }
                                 else if (3 == (int)parentgameObject.GetComponent<BusnakeHead>().GetDirection())
                                 {
                                     // 変更をかける
@@ -318,7 +318,7 @@ public class BusnakeBody : MonoBehaviour
                                 {
                                     // 変更をかける
                                     GetComponent<Image>().sprite = PlayerTexNumber[2];
-                                   
+
                                     // 向きを変える
                                     transform.rotation = Quaternion.Euler(0f, 0f, 0f);
                                 }
@@ -557,7 +557,7 @@ public class BusnakeBody : MonoBehaviour
                 SavePos = GetComponent<RectTransform>().localPosition;
 
                 lerpValue = 0.0f;
-                bTriggerleap = false;  
+                bTriggerleap = false;
             }
         }
         else

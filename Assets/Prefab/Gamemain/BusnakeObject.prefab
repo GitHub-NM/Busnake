@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &242412807676531639
+--- !u!1 &4118944557701374972
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,105 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 242412807676531638}
-  - component: {fileID: 242412807676531643}
-  - component: {fileID: 242412807676531636}
-  - component: {fileID: 242412807676531637}
-  m_Layer: 0
-  m_Name: Busnake_body4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &242412807676531638
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242412807676531639}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 242412809174675526}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -160, y: 0}
-  m_SizeDelta: {x: 32, y: 32}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &242412807676531643
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242412807676531639}
-  m_CullTransparentMesh: 0
---- !u!114 &242412807676531636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242412807676531639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!114 &242412807676531637
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242412807676531639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d60c8d00b2240c649b8c115dc776d74f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentgameObject: {fileID: 6413023645948424861}
-  BusnakeHead: {fileID: 242412809645473035}
-  PlayerTexNumber:
-  - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
-  - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
-  - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
-  SavePos: {x: 0, y: 0, z: 0}
-  lerpValueplus: 0
-  Direction: 0
-  OldDirection: 0
---- !u!1 &242412809174675527
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 242412809174675526}
-  - component: {fileID: 242412809174675524}
+  - component: {fileID: 4118944557701374973}
+  - component: {fileID: 4118944557701374975}
   m_Layer: 0
   m_Name: BusnakeObject
   m_TagString: Player
@@ -114,39 +17,39 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &242412809174675526
+--- !u!4 &4118944557701374973
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242412809174675527}
+  m_GameObject: {fileID: 4118944557701374972}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 242412809645473028}
-  - {fileID: 1384433138958782024}
-  - {fileID: 2956513842488128952}
-  - {fileID: 6588811520842218432}
-  - {fileID: 8269200077138755527}
-  - {fileID: 242412807676531638}
+  - {fileID: 4118944557903769279}
+  - {fileID: 2972984815833783795}
+  - {fileID: 8185299818960528498}
+  - {fileID: 8185299819392176642}
+  - {fileID: 8185299817748471048}
+  - {fileID: 8185299818769367586}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &242412809174675524
+--- !u!114 &4118944557701374975
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242412809174675527}
+  m_GameObject: {fileID: 4118944557701374972}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 742a789973470934b8b1a875ac01f5f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &242412809645473029
+--- !u!1 &4118944557903769278
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,12 +57,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 242412809645473028}
-  - component: {fileID: 242412809645473032}
-  - component: {fileID: 242412809645473033}
-  - component: {fileID: 242412809645473035}
-  - component: {fileID: 242412809645473027}
-  - component: {fileID: 242412809645473026}
+  - component: {fileID: 4118944557903769279}
+  - component: {fileID: 4118944557903769267}
+  - component: {fileID: 4118944557903769276}
+  - component: {fileID: 4118944557903769266}
+  - component: {fileID: 4118944557903769272}
+  - component: {fileID: 4118944557903769273}
   m_Layer: 5
   m_Name: Busnake_head
   m_TagString: Player
@@ -167,18 +70,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &242412809645473028
+--- !u!224 &4118944557903769279
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242412809645473029}
+  m_GameObject: {fileID: 4118944557903769278}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 242412809174675526}
+  m_Father: {fileID: 4118944557701374973}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -186,21 +89,45 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &242412809645473032
+--- !u!222 &4118944557903769267
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242412809645473029}
+  m_GameObject: {fileID: 4118944557903769278}
   m_CullTransparentMesh: 0
---- !u!114 &242412809645473033
+--- !u!114 &4118944557903769276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242412809645473029}
+  m_GameObject: {fileID: 4118944557903769278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 514a2ea0e408ea34981df8cf1436644f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bTrigger: 0
+  lerpValueplus: 0
+  stateDirection: 0
+  oldstateDirection: 0
+  bStack: {fileID: 4118944557701374975}
+  bodys:
+  - {fileID: 8185299818769367589}
+  - {fileID: 8185299817748471052}
+  - {fileID: 8185299819392176646}
+  - {fileID: 8185299818960528502}
+  - {fileID: 8248772307767153796}
+  recttransform: {x: 0, y: 0, z: 0}
+--- !u!114 &4118944557903769266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4118944557903769278}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -223,38 +150,14 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &242412809645473035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242412809645473029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 362430660f8e51e46a5efe7d0061f4e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bTrigger: 0
-  lerpValueplus: 0
-  stateDirection: 0
-  oldstateDirection: 0
-  bStack: {fileID: 242412809174675524}
-  bodys:
-  - {fileID: 242412807676531639}
-  - {fileID: 6413023645948424861}
-  - {fileID: 6511515613801802403}
-  - {fileID: 1365446864248770482}
-  - {fileID: 5192036701891430207}
-  recttransform: {x: 0, y: 0, z: 0}
---- !u!50 &242412809645473027
+--- !u!50 &4118944557903769272
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242412809645473029}
+  m_GameObject: {fileID: 4118944557903769278}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -268,13 +171,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &242412809645473026
+--- !u!61 &4118944557903769273
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 242412809645473029}
+  m_GameObject: {fileID: 4118944557903769278}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -294,7 +197,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 31.558418, y: 16.073708}
   m_EdgeRadius: 0
---- !u!1 &1365446864248770482
+--- !u!1 &8185299817748471052
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,223 +205,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2956513842488128952}
-  - component: {fileID: 7037864950612181754}
-  - component: {fileID: 8275260266030784713}
-  - component: {fileID: 1844923520241927025}
-  m_Layer: 2
-  m_Name: Busnake_body1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2956513842488128952
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365446864248770482}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 242412809174675526}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64, y: 0}
-  m_SizeDelta: {x: 32, y: 32}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7037864950612181754
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365446864248770482}
-  m_CullTransparentMesh: 0
---- !u!114 &8275260266030784713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365446864248770482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!114 &1844923520241927025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1365446864248770482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d60c8d00b2240c649b8c115dc776d74f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentgameObject: {fileID: 5192036701891430207}
-  BusnakeHead: {fileID: 242412809645473035}
-  PlayerTexNumber:
-  - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
-  - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
-  - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
-  SavePos: {x: 0, y: 0, z: 0}
-  lerpValueplus: 0
-  Direction: 0
-  OldDirection: 0
---- !u!1 &5192036701891430207
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1384433138958782024}
-  - component: {fileID: 8092826022856106282}
-  - component: {fileID: 4720424635728551876}
-  - component: {fileID: 5381113201006251260}
+  - component: {fileID: 8185299817748471048}
+  - component: {fileID: 8185299817748471051}
+  - component: {fileID: 8185299817748471050}
+  - component: {fileID: 8185299817748471053}
   m_Layer: 1
-  m_Name: Busnake_body
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1384433138958782024
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5192036701891430207}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 242412809174675526}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -32, y: 0}
-  m_SizeDelta: {x: 32, y: 32}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8092826022856106282
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5192036701891430207}
-  m_CullTransparentMesh: 0
---- !u!114 &4720424635728551876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5192036701891430207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!114 &5381113201006251260
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5192036701891430207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d60c8d00b2240c649b8c115dc776d74f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parentgameObject: {fileID: 242412809645473029}
-  BusnakeHead: {fileID: 242412809645473035}
-  PlayerTexNumber:
-  - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
-  - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
-  - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
-  SavePos: {x: 0, y: 0, z: 0}
-  lerpValueplus: 0
-  Direction: 0
-  OldDirection: 0
---- !u!1 &6413023645948424861
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8269200077138755527}
-  - component: {fileID: 5998387424499643956}
-  - component: {fileID: 870880322844535176}
-  - component: {fileID: 4211944895563238909}
-  m_Layer: 8
   m_Name: Busnake_body3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &8269200077138755527
+--- !u!224 &8185299817748471048
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6413023645948424861}
+  m_GameObject: {fileID: 8185299817748471052}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 242412809174675526}
+  m_Father: {fileID: 4118944557701374973}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -526,21 +235,21 @@ RectTransform:
   m_AnchoredPosition: {x: -128, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &5998387424499643956
+--- !u!222 &8185299817748471051
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6413023645948424861}
+  m_GameObject: {fileID: 8185299817748471052}
   m_CullTransparentMesh: 0
---- !u!114 &870880322844535176
+--- !u!114 &8185299817748471050
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6413023645948424861}
+  m_GameObject: {fileID: 8185299817748471052}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -563,20 +272,20 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &4211944895563238909
+--- !u!114 &8185299817748471053
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6413023645948424861}
+  m_GameObject: {fileID: 8185299817748471052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d60c8d00b2240c649b8c115dc776d74f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f34e848f1d899146b238c6ee96de5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentgameObject: {fileID: 6511515613801802403}
-  BusnakeHead: {fileID: 242412809645473035}
+  parentgameObject: {fileID: 8185299819392176646}
+  BusnakeHead: {fileID: 4118944557903769276}
   PlayerTexNumber:
   - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
   - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
@@ -585,7 +294,7 @@ MonoBehaviour:
   lerpValueplus: 0
   Direction: 0
   OldDirection: 0
---- !u!1 &6511515613801802403
+--- !u!1 &8185299818769367589
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -593,51 +302,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6588811520842218432}
-  - component: {fileID: 8737296496044913831}
-  - component: {fileID: 2514948117780221786}
-  - component: {fileID: 8468320849809684073}
-  m_Layer: 5
-  m_Name: Busnake_body2
+  - component: {fileID: 8185299818769367586}
+  - component: {fileID: 8185299818769367585}
+  - component: {fileID: 8185299818769367584}
+  - component: {fileID: 8185299818769367587}
+  m_Layer: 1
+  m_Name: Busnake_body4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &6588811520842218432
+--- !u!224 &8185299818769367586
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6511515613801802403}
+  m_GameObject: {fileID: 8185299818769367589}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 242412809174675526}
-  m_RootOrder: 3
+  m_Father: {fileID: 4118944557701374973}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -96, y: 0}
+  m_AnchoredPosition: {x: -160, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &8737296496044913831
+--- !u!222 &8185299818769367585
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6511515613801802403}
+  m_GameObject: {fileID: 8185299818769367589}
   m_CullTransparentMesh: 0
---- !u!114 &2514948117780221786
+--- !u!114 &8185299818769367584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6511515613801802403}
+  m_GameObject: {fileID: 8185299818769367589}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -660,20 +369,311 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!114 &8468320849809684073
+--- !u!114 &8185299818769367587
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6511515613801802403}
+  m_GameObject: {fileID: 8185299818769367589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d60c8d00b2240c649b8c115dc776d74f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f34e848f1d899146b238c6ee96de5b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentgameObject: {fileID: 1365446864248770482}
-  BusnakeHead: {fileID: 242412809645473035}
+  parentgameObject: {fileID: 8185299817748471052}
+  BusnakeHead: {fileID: 4118944557903769276}
+  PlayerTexNumber:
+  - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
+  - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
+  - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
+  SavePos: {x: 0, y: 0, z: 0}
+  lerpValueplus: 0
+  Direction: 0
+  OldDirection: 0
+--- !u!1 &8185299818960528502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8185299818960528498}
+  - component: {fileID: 8185299818960528501}
+  - component: {fileID: 8185299818960528500}
+  - component: {fileID: 8185299818960528503}
+  m_Layer: 1
+  m_Name: Busnake_body1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8185299818960528498
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185299818960528502}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4118944557701374973}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -64, y: 0}
+  m_SizeDelta: {x: 32, y: 32}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8185299818960528501
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185299818960528502}
+  m_CullTransparentMesh: 0
+--- !u!114 &8185299818960528500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185299818960528502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!114 &8185299818960528503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185299818960528502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f34e848f1d899146b238c6ee96de5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentgameObject: {fileID: 8248772307767153796}
+  BusnakeHead: {fileID: 4118944557903769276}
+  PlayerTexNumber:
+  - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
+  - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
+  - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
+  SavePos: {x: 0, y: 0, z: 0}
+  lerpValueplus: 0
+  Direction: 0
+  OldDirection: 0
+--- !u!1 &8185299819392176646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8185299819392176642}
+  - component: {fileID: 8185299819392176645}
+  - component: {fileID: 8185299819392176644}
+  - component: {fileID: 8185299819392176647}
+  m_Layer: 1
+  m_Name: Busnake_body2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &8185299819392176642
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185299819392176646}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4118944557701374973}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -96, y: 0}
+  m_SizeDelta: {x: 32, y: 32}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &8185299819392176645
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185299819392176646}
+  m_CullTransparentMesh: 0
+--- !u!114 &8185299819392176644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185299819392176646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!114 &8185299819392176647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8185299819392176646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f34e848f1d899146b238c6ee96de5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentgameObject: {fileID: 8185299818960528502}
+  BusnakeHead: {fileID: 4118944557903769276}
+  PlayerTexNumber:
+  - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
+  - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
+  - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
+  SavePos: {x: 0, y: 0, z: 0}
+  lerpValueplus: 0
+  Direction: 0
+  OldDirection: 0
+--- !u!1 &8248772307767153796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2972984815833783795}
+  - component: {fileID: 5348914101230629521}
+  - component: {fileID: 8932333888799739007}
+  - component: {fileID: 8131770951829905223}
+  m_Layer: 1
+  m_Name: Busnake_body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2972984815833783795
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248772307767153796}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4118944557701374973}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -32, y: 0}
+  m_SizeDelta: {x: 32, y: 32}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &5348914101230629521
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248772307767153796}
+  m_CullTransparentMesh: 0
+--- !u!114 &8932333888799739007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248772307767153796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!114 &8131770951829905223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8248772307767153796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f34e848f1d899146b238c6ee96de5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentgameObject: {fileID: 4118944557903769278}
+  BusnakeHead: {fileID: 4118944557903769276}
   PlayerTexNumber:
   - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
   - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}

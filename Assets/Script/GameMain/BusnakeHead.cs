@@ -7,8 +7,8 @@ public class BusnakeHead : MonoBehaviour
 {
     // メンバ変数定義
     // public
-    public  bool  bTrigger;
-    public float  lerpValueplus;
+    public bool bTrigger;
+    public float lerpValueplus;
     public StateDirection stateDirection;
     public StateDirection oldstateDirection;
     public BusnakeStack bStack;
@@ -21,7 +21,7 @@ public class BusnakeHead : MonoBehaviour
     // クォータニオンの準備
     private Vector3 q1;
     private Vector3 q2;
-    
+
     // 列挙宣言
     public enum StateDirection
     {// 顔の向きの列挙構造体
@@ -130,7 +130,7 @@ public class BusnakeHead : MonoBehaviour
             {
                 // 正規化
                 lerpValue = 1.0f;
-                
+
                 // 線形補間
                 recttransform = Vector3.Lerp(q1, q2, lerpValue);
                 GetComponent<RectTransform>().localPosition = recttransform;
@@ -153,7 +153,7 @@ public class BusnakeHead : MonoBehaviour
 
             // ポジションを移動させる          
             collision.gameObject.transform.localPosition = bodys[bStack.stack.Count].transform.localPosition;
-            
+
             // 子オブジェクトにする
             collision.gameObject.transform.parent = bodys[bStack.stack.Count].transform;
 
