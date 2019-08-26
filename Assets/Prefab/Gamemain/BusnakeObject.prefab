@@ -88,11 +88,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentgameObject: {fileID: 6413023645948424861}
-  BusnakeMoveAnim: {fileID: 242412809645473035}
+  BusnakeHead: {fileID: 242412809645473035}
   PlayerTexNumber:
   - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
   - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
   - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
+  SavePos: {x: 0, y: 0, z: 0}
   lerpValueplus: 0
   Direction: 0
   OldDirection: 0
@@ -239,18 +240,13 @@ MonoBehaviour:
   stateDirection: 0
   oldstateDirection: 0
   bStack: {fileID: 242412809174675524}
-  AnimalObj:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  nCnt: 0
+  bodys:
+  - {fileID: 242412807676531639}
+  - {fileID: 6413023645948424861}
+  - {fileID: 6511515613801802403}
+  - {fileID: 1365446864248770482}
+  - {fileID: 5192036701891430207}
+  recttransform: {x: 0, y: 0, z: 0}
 --- !u!50 &242412809645473027
 Rigidbody2D:
   serializedVersion: 4
@@ -386,11 +382,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentgameObject: {fileID: 5192036701891430207}
-  BusnakeMoveAnim: {fileID: 242412809645473035}
+  BusnakeHead: {fileID: 242412809645473035}
   PlayerTexNumber:
   - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
   - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
   - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
+  SavePos: {x: 0, y: 0, z: 0}
   lerpValueplus: 0
   Direction: 0
   OldDirection: 0
@@ -482,11 +479,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentgameObject: {fileID: 242412809645473029}
-  BusnakeMoveAnim: {fileID: 242412809645473035}
+  BusnakeHead: {fileID: 242412809645473035}
   PlayerTexNumber:
   - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
   - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
   - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
+  SavePos: {x: 0, y: 0, z: 0}
   lerpValueplus: 0
   Direction: 0
   OldDirection: 0
@@ -578,11 +576,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentgameObject: {fileID: 6511515613801802403}
-  BusnakeMoveAnim: {fileID: 242412809645473035}
+  BusnakeHead: {fileID: 242412809645473035}
   PlayerTexNumber:
   - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
   - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
   - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
+  SavePos: {x: 0, y: 0, z: 0}
   lerpValueplus: 0
   Direction: 0
   OldDirection: 0
@@ -674,11 +673,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentgameObject: {fileID: 1365446864248770482}
-  BusnakeMoveAnim: {fileID: 242412809645473035}
+  BusnakeHead: {fileID: 242412809645473035}
   PlayerTexNumber:
   - {fileID: 21300000, guid: 16c1af1b807bcce4a997496ab070c7dd, type: 3}
   - {fileID: 21300000, guid: 0109ded8947eb3242a6fc955ff195d9c, type: 3}
   - {fileID: 21300000, guid: d894c912a19d2834f80352811caf1c73, type: 3}
+  SavePos: {x: 0, y: 0, z: 0}
   lerpValueplus: 0
   Direction: 0
   OldDirection: 0

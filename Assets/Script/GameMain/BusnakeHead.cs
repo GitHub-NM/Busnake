@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BusnakeMoveAnim : MonoBehaviour
+public class BusnakeHead : MonoBehaviour
 {
     // メンバ変数定義
     // public

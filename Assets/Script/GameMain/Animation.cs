@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class Animation : MonoBehaviour
 {
-    public GameObject PlayerCurrentTex;
     public Sprite[] PlayerTexNumber;
 
     float time;
     int i;
+
 
     // Use this for initialization
     void Start()
@@ -30,7 +30,7 @@ public class Animation : MonoBehaviour
             else
                 i = 0;
 
-            this.GetComponent<Image>().sprite = PlayerTexNumber[i];
+            GetComponent<Image>().sprite = PlayerTexNumber[i];
             time = 0.0f;
         }
 
