@@ -93,7 +93,7 @@ public class GC_main : MonoBehaviour
         //Screenwidth = Screen.width;
         Screenheight = Screen.height;
         initBoardpos = new Vector3(0, ((-Screenheight) - (GCBoardObj.GetComponent<RectTransform>().sizeDelta.x / 2)-25), 0);
-        Debug.Log(GCBoardObj.GetComponent<RectTransform>().sizeDelta.x);
+        
         endBoardpos = new Vector3(0, 0, 0);
         timeStepBoard = 0.0f;
 
