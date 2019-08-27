@@ -13,6 +13,7 @@ public class BusnakeHead : MonoBehaviour
     public StateDirection oldstateDirection;
     public BusnakeStack bStack;
     public GameObject[] bodys;
+    public int nMoveCnt;
     // private
     public Vector3 recttransform;
     private float lerpValue;
@@ -41,6 +42,7 @@ public class BusnakeHead : MonoBehaviour
         stateDirection = StateDirection.STATE_RIGHT;
         oldstateDirection = stateDirection;
         ImageSize = 32.0f;
+        nMoveCnt = 0;
 
         // ポジション宣言
         recttransform = GetComponent<RectTransform>().localPosition;
@@ -54,6 +56,9 @@ public class BusnakeHead : MonoBehaviour
         // キー入力待ち
         if (!bTrigger && Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {//下
+            // 走行距離プラス
+            nMoveCnt++;
+
             q1 = new Vector3(recttransform.x, recttransform.y, recttransform.z);
             q2 = new Vector3(recttransform.x, recttransform.y - ImageSize, recttransform.z);
 
@@ -69,6 +74,9 @@ public class BusnakeHead : MonoBehaviour
         }
         else if (!bTrigger && Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {//上
+            // 走行距離プラス
+            nMoveCnt++;
+
             q1 = new Vector3(recttransform.x, recttransform.y, recttransform.z);
             q2 = new Vector3(recttransform.x, recttransform.y + ImageSize, recttransform.z);
 
@@ -85,6 +93,9 @@ public class BusnakeHead : MonoBehaviour
 
         if (!bTrigger && Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {//左
+            // 走行距離プラス
+            nMoveCnt++;
+
             q1 = new Vector3(recttransform.x, recttransform.y, recttransform.z);
             q2 = new Vector3(recttransform.x - ImageSize, recttransform.y, recttransform.z);
 
@@ -100,6 +111,9 @@ public class BusnakeHead : MonoBehaviour
         }
         else if (!bTrigger && Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {//右
+            // 走行距離プラス
+            nMoveCnt++;
+
             q1 = new Vector3(recttransform.x, recttransform.y, recttransform.z);
             q2 = new Vector3(recttransform.x + ImageSize, recttransform.y, recttransform.z);
 
@@ -118,6 +132,12 @@ public class BusnakeHead : MonoBehaviour
         // トリガーがONになったら
         if (bTrigger)
         {
+            // カンスト処理
+            if (nMoveCnt >= 999)
+            {
+                nMoveCnt = 999;
+            }
+
             // 線形補間
             recttransform = Vector3.Lerp(q1, q2, lerpValue);
             GetComponent<RectTransform>().localPosition = recttransform;
