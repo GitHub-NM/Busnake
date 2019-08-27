@@ -8,10 +8,15 @@ public class pataanim : MonoBehaviour
     float angle = 1;
     int pataanim_movenum = 0;
     float pataanim_speed = 5.0f;
+
+    public bool patamugen;
     // Start is called before the first frame update
     void Start()
     {
-
+        if(patamugen==true)
+        {
+            pataanim_movenum = 2;
+        }
     }
 
     // Update is called once per frame
@@ -41,6 +46,11 @@ public class pataanim : MonoBehaviour
                     angle = 0f;
                 }
                 break;
+
+            case 2:
+                angle += 5f;
+                break;
+
         }
 
         
