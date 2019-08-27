@@ -15,6 +15,7 @@ public class BusnakeHead : MonoBehaviour
     public GameObject[] bodys;
     public int nMoveCnt;
     public SignManager signManager;
+    public Pause pause;
 
     // private
     public Vector3 recttransform;
@@ -85,7 +86,7 @@ public class BusnakeHead : MonoBehaviour
                 lerpValue = 0.0f;
             }
         }
-        else if (signManager.goal) return;
+        else if (signManager.goal || !pause.bpop) return;
 
         // キー入力待ち
         if (!bTrigger && Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
