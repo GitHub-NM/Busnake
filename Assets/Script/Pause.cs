@@ -32,7 +32,7 @@ public class Pause : MonoBehaviour
     float Screenheight;
 
     public float timeStepBoard;
-    bool bpop;
+    public bool bpop;
 
     public int Order;
     enum lightpos
