@@ -14,6 +14,8 @@ public class BusnakeHead : MonoBehaviour
     public BusnakeStack bStack;
     public GameObject[] bodys;
     public int nMoveCnt;
+    public SignManager signManager;
+
     // private
     public Vector3 recttransform;
     private float lerpValue;
@@ -52,6 +54,38 @@ public class BusnakeHead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // トリガーがONになったら
+        if (bTrigger)
+        {
+            // カンスト処理
+            if (nMoveCnt >= 999)
+            {
+                nMoveCnt = 999;
+            }
+
+            // 線形補間
+            recttransform = Vector3.Lerp(q1, q2, lerpValue);
+            GetComponent<RectTransform>().localPosition = recttransform;
+
+            // 値を足す
+            lerpValue += lerpValueplus;
+
+            // 値が1.0f以上になったらやめる
+            if (lerpValue >= 1.0f)
+            {
+                // 正規化
+                lerpValue = 1.0f;
+
+                // 線形補間
+                recttransform = Vector3.Lerp(q1, q2, lerpValue);
+                GetComponent<RectTransform>().localPosition = recttransform;
+
+                // 初期化
+                bTrigger = false;
+                lerpValue = 0.0f;
+            }
+        }
+        else if (signManager.goal) return;
 
         // キー入力待ち
         if (!bTrigger && Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
@@ -127,38 +161,6 @@ public class BusnakeHead : MonoBehaviour
             // トリガーON
             bTrigger = true;
 
-        }
-
-        // トリガーがONになったら
-        if (bTrigger)
-        {
-            // カンスト処理
-            if (nMoveCnt >= 999)
-            {
-                nMoveCnt = 999;
-            }
-
-            // 線形補間
-            recttransform = Vector3.Lerp(q1, q2, lerpValue);
-            GetComponent<RectTransform>().localPosition = recttransform;
-
-            // 値を足す
-            lerpValue += lerpValueplus;
-
-            // 値が1.0f以上になったらやめる
-            if (lerpValue >= 1.0f)
-            {
-                // 正規化
-                lerpValue = 1.0f;
-
-                // 線形補間
-                recttransform = Vector3.Lerp(q1, q2, lerpValue);
-                GetComponent<RectTransform>().localPosition = recttransform;
-
-                // 初期化
-                bTrigger = false;
-                lerpValue = 0.0f;
-            }
         }
     }
 
