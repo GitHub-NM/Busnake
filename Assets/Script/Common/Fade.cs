@@ -66,5 +66,10 @@ public class Fade : MonoBehaviour
         }
 
     }
-    
+
+    // フェード開始
+    public void SetFade()
+    {
+       fade = FADE.FADE_OUT;
+    }
 }
