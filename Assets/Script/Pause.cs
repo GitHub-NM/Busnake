@@ -7,8 +7,12 @@ public class Pause : MonoBehaviour
 {
     [SerializeField]
     GameObject lightObj;
+
+    
     [SerializeField]
-    GameObject FadePanel;
+    GameObject FadePataanim_Retry;
+    [SerializeField]
+    GameObject FadePataanim_Title;
 
     [SerializeField]
     Vector3 lightBackpos;
@@ -53,6 +57,9 @@ public class Pause : MonoBehaviour
         timeStepBoard = 0.0f;
 
         bpop = false;
+        
+        FadePataanim_Retry.SetActive(false);
+        FadePataanim_Title.SetActive(false);
     }
 
     // Update is called once per frame
@@ -96,6 +103,7 @@ public class Pause : MonoBehaviour
                     lightObj.transform.localPosition = lightBackpos;
                     if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                     {
+                        
                         bpop = true;
                     }
                 }
@@ -104,6 +112,7 @@ public class Pause : MonoBehaviour
                     lightObj.transform.localPosition = lightretrypos;
                     if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                     {
+                        FadePataanim_Retry.SetActive(true);
                         SceneManager.LoadScene(nowSceneName);
                     }
                 }
@@ -112,7 +121,7 @@ public class Pause : MonoBehaviour
                     lightObj.transform.localPosition = lighttitlepos;
                     if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                     {
-                        
+                        FadePataanim_Title.SetActive(true);
                         SceneManager.LoadScene("Title");
                     }
                 }

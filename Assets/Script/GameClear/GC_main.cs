@@ -40,6 +40,13 @@ public class GC_main : MonoBehaviour
     GameObject pata_star_2Obj;
 
     [SerializeField]
+    GameObject FadePataanim_Next;
+    [SerializeField]
+    GameObject FadePataanim_Retry;
+    [SerializeField]
+    GameObject FadePataanim_Title;
+
+    [SerializeField]
     Vector3 GClightnextpos;
     [SerializeField]
     Vector3 GClightretrypos;
@@ -112,6 +119,11 @@ public class GC_main : MonoBehaviour
         Score_tenObj.SetActive(false);
         Score_hundredObj.SetActive(false);
         nowSceneName = SceneManager.GetActiveScene().name;
+
+
+        FadePataanim_Next.SetActive(false);
+        FadePataanim_Retry.SetActive(false);
+        FadePataanim_Title.SetActive(false);
     }
 
     // Update is called once per frame
@@ -229,13 +241,17 @@ public class GC_main : MonoBehaviour
             if (lightposnow == lightpos.next)
             {
                 GClightObj.transform.localPosition = GClightnextpos;
-
+                if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
+                {
+                    FadePataanim_Next.SetActive(true);
+                }
             }
             else if (lightposnow == lightpos.retry)
             {
                 GClightObj.transform.localPosition = GClightretrypos;
                 if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                 {
+                    FadePataanim_Retry.SetActive(true);
                     SceneManager.LoadScene(nowSceneName);
                 }
             }
@@ -244,6 +260,7 @@ public class GC_main : MonoBehaviour
                 GClightObj.transform.localPosition = GClighttitlepos;
                 if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                 {
+                    FadePataanim_Title.SetActive(true);
                     SceneManager.LoadScene("Title");
                 }
             }

@@ -68,6 +68,7 @@
      <Compile Include="Assets\Script\GameMain\SpriteChange.cs" />
      <Compile Include="Assets\Script\Pause.cs" />
      <Compile Include="Assets\Script\Select\Select.cs" />
+     <Compile Include="Assets\Script\Startlogo.cs" />
      <Compile Include="Assets\Script\Title\Title.cs" />
      <None Include="Assets\Busnake_Asset\BGM\ReadMe.txt" />
      <None Include="Assets\Busnake_Asset\SE\StarPopUp\ReadMe.txt" />
