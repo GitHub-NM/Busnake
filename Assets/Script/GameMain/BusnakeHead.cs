@@ -12,6 +12,7 @@ public class BusnakeHead : MonoBehaviour
     public StateDirection stateDirection;
     public StateDirection oldstateDirection;
     public BusnakeStack bStack;
+    public BusnakeBody child;
     public GameObject[] bodys;
     public int nMoveCnt;
     public SignManager signManager;
@@ -46,6 +47,7 @@ public class BusnakeHead : MonoBehaviour
         oldstateDirection = stateDirection;
         ImageSize = 32.0f;
         nMoveCnt = 0;
+        child.enabled = true;
 
         // ポジション宣言
         recttransform = GetComponent<RectTransform>().localPosition;
