@@ -1,15 +1,25 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 9af61f719b9603440b03793682300e5d
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 8288426215254106694
     second: 8_0
+=======
+guid: b4be33336fc7d174faf692064fab5da8
+TextureImporter:
+  internalIDToNameTable: []
+>>>>>>> e333b6cc5fa46858dbea9d46c61248687f9e8509
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
     mipMapMode: 0
+<<<<<<< HEAD
     enableMipMap: 0
+=======
+    enableMipMap: 1
+>>>>>>> e333b6cc5fa46858dbea9d46c61248687f9e8509
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,6 +47,7 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
+<<<<<<< HEAD
     wrapU: 1
     wrapV: 1
     wrapW: -1
@@ -44,6 +55,15 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
+=======
+    wrapU: -1
+    wrapV: -1
+    wrapW: -1
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 0
+>>>>>>> e333b6cc5fa46858dbea9d46c61248687f9e8509
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +72,15 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
+<<<<<<< HEAD
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
+=======
+  alphaIsTransparency: 0
+  spriteTessellationDetail: -1
+  textureType: 0
+>>>>>>> e333b6cc5fa46858dbea9d46c61248687f9e8509
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -72,6 +98,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+<<<<<<< HEAD
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -122,6 +149,15 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 0c714d1719d455841aeec59a7f047cba
+=======
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+>>>>>>> e333b6cc5fa46858dbea9d46c61248687f9e8509
     internalID: 0
     vertices: []
     indices: 

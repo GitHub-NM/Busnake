@@ -51,6 +51,11 @@ public class Select : MonoBehaviour
     bool bscale;
     public int Worldnow;
     public int Stagenow;
+
+    [SerializeField]
+    Fade Fade;
+
+    public bool bScenechange;//true=Scenechange中
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +63,7 @@ public class Select : MonoBehaviour
         Worldnow = 1;
         Stagenow = 1;
         Arrowleft.SetActive(false);
+        bScenechange = false;
     }
 
     // Update is called once per frame
@@ -67,19 +73,27 @@ public class Select : MonoBehaviour
         //PCの入力モードが半角になっていないとSpaceKeyが反応しない
         if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
         {
-            SceneManager.LoadScene("Gamemain");
+            Fade.SetFade();
+
+            bScenechange = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && lightposnow != 0)
+        if (Fade.m_bChage)
+        {
+            SceneManager.LoadScene("Gamemain");
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.UpArrow) && lightposnow != 0 && bScenechange == false)
         {
             lightposnow -= 1;
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && lightposnow != 4)
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && lightposnow != 4 && bScenechange == false)
         {
             lightposnow += 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && Worldnow != 1)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && Worldnow != 1 && bScenechange == false)
         {
             Worldnow -= 1;
             if(Worldnow==1)
@@ -87,7 +101,7 @@ public class Select : MonoBehaviour
                 Arrowleft.SetActive(false);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && Worldnow != 4)
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && Worldnow != 4 && bScenechange == false)
         {
             Worldnow += 1;
             Arrowleft.SetActive(true);
@@ -147,7 +161,14 @@ public class Select : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                 {
+                    Fade.SetFade();
+
+                    bScenechange = true;
+                }
+                if (Fade.m_bChage)
+                {
                     SceneManager.LoadScene("Title");
+
                 }
                 Stagenow = 0;
                 break;

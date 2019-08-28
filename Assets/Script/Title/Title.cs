@@ -24,6 +24,11 @@ public class Title : MonoBehaviour
     [SerializeField]
     Sprite Boardoffimage;
 
+    [SerializeField]
+    Fade Fade;
+
+    public bool bScenechange;//true=Scenechange中
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +38,7 @@ public class Title : MonoBehaviour
 
         StartBoard.GetComponent<Image>().sprite = Boardonimage;
         EndBoard.GetComponent<Image>().sprite = Boardoffimage;
+        bScenechange = false;
     }
 
     // Update is called once per frame
@@ -42,8 +48,15 @@ public class Title : MonoBehaviour
         //PCの入力モードが半角になっていないとSpaceKeyが反応しない(かなしい)
         if (lightposnow == 0 && (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space)))
         {
-            SceneManager.LoadScene("StageSelect");
+            Fade.SetFade();
+            bScenechange = true;
         }
+        if (Fade.m_bChage)
+        {
+            SceneManager.LoadScene("StageSelect");
+
+        }
+
         else if (lightposnow == 1 && (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space)))
         {
 #if UNITY_EDITOR
@@ -54,7 +67,7 @@ public class Title : MonoBehaviour
 
             Application.Quit();
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && lightposnow != 0)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && lightposnow != 0&& bScenechange==false)
         {
             lightposnow = 0;
             Startlight.GetComponent<Image>().sprite = lightonimage;
@@ -63,7 +76,7 @@ public class Title : MonoBehaviour
             StartBoard.GetComponent<Image>().sprite = Boardonimage;
             EndBoard.GetComponent<Image>().sprite = Boardoffimage;
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && lightposnow != 1)
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && lightposnow != 1 && bScenechange == false)
         {
             lightposnow = 1;
             Startlight.GetComponent<Image>().sprite = lightoffimage;
