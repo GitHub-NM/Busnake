@@ -274,18 +274,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1259504086}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &481587571 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5445491370838174927, guid: a59060628f2976941be604d458fb8af4,
-    type: 3}
-  m_PrefabInstance: {fileID: 594597098173892205}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f34e848f1d899146b238c6ee96de5b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &519664145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1015,11 +1003,6 @@ PrefabInstance:
       propertyPath: startlogo
       value: 
       objectReference: {fileID: 169560409}
-    - target: {fileID: 226074009831407696, guid: a59060628f2976941be604d458fb8af4,
-        type: 3}
-      propertyPath: childend
-      value: 
-      objectReference: {fileID: 481587571}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a59060628f2976941be604d458fb8af4, type: 3}
 --- !u!114 &820574273131316797 stripped
@@ -2125,7 +2108,7 @@ PrefabInstance:
     - target: {fileID: 7856015616612815128, guid: ac0e8b5540e4e1c47851250d1c025035,
         type: 3}
       propertyPath: NextSceneName
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0e8b5540e4e1c47851250d1c025035, type: 3}
