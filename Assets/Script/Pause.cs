@@ -56,7 +56,7 @@ public class Pause : MonoBehaviour
         endBoardpos = new Vector3(0, 0, 0);
         timeStepBoard = 0.0f;
 
-        bpop = false;
+        bpop = true;
         
         FadePataanim_Retry.SetActive(false);
         FadePataanim_Title.SetActive(false);

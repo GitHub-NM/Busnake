@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BusnakeBody : MonoBehaviour
 {
     // メンバ変数定義
+    public BusnakeBody childgameObject;
     public GameObject parentgameObject;
     public BusnakeHead BusnakeHead;
     public Sprite[] PlayerTexNumber;
@@ -32,6 +33,7 @@ public class BusnakeBody : MonoBehaviour
         bTriggerleap = false;
         lerpValue = 0.0f;
         lerpValueplus = 0.05f;
+        childgameObject.enabled = true;
     }
 
     // Update is called once per frame
