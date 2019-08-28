@@ -60,6 +60,15 @@ public class Select : MonoBehaviour
 
     public int[] star = new int[17];
 
+    [SerializeField]
+    GameObject[] star_Stage = new GameObject[12];
+
+
+    [SerializeField]
+    Sprite staronimage;
+    [SerializeField]
+    Sprite staroffimage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,10 +78,13 @@ public class Select : MonoBehaviour
         Arrowleft.SetActive(false);
         bScenechange = false;
 
+        //セーブデータをロード
         for (int i = 1; i <= 16; i++)
         {
             star[i] = PlayerPrefs.GetInt(i.ToString(), 0);
         }
+
+
     }
 
     // Update is called once per frame
@@ -87,6 +99,422 @@ public class Select : MonoBehaviour
             bScenechange = true;
         }
 
+        //ロードした星データを反映
+        //Worldnow1
+        if (Worldnow == 1)
+        {
+            if (star[1] == 0)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[1].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[2].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[1] == 1)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staronimage;
+                star_Stage[1].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[2].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[1] == 2)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staronimage;
+                star_Stage[1].GetComponent<Image>().sprite = staronimage;
+                star_Stage[2].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[1] == 3)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staronimage;
+                star_Stage[1].GetComponent<Image>().sprite = staronimage;
+                star_Stage[2].GetComponent<Image>().sprite = staronimage;
+            }
+
+            if (star[2] == 0)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[4].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[5].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[2] == 1)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staronimage;
+                star_Stage[4].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[5].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[2] == 2)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staronimage;
+                star_Stage[4].GetComponent<Image>().sprite = staronimage;
+                star_Stage[5].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[2] == 3)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staronimage;
+                star_Stage[4].GetComponent<Image>().sprite = staronimage;
+                star_Stage[5].GetComponent<Image>().sprite = staronimage;
+            }
+
+            if (star[3] == 0)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[7].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[8].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[3] == 1)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staronimage;
+                star_Stage[7].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[8].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[3] == 2)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staronimage;
+                star_Stage[7].GetComponent<Image>().sprite = staronimage;
+                star_Stage[8].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[3] == 3)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staronimage;
+                star_Stage[7].GetComponent<Image>().sprite = staronimage;
+                star_Stage[8].GetComponent<Image>().sprite = staronimage;
+            }
+
+            if (star[4] == 0)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[10].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[11].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[4] == 1)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staronimage;
+                star_Stage[10].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[11].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[4] == 2)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staronimage;
+                star_Stage[10].GetComponent<Image>().sprite = staronimage;
+                star_Stage[11].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[4] == 3)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staronimage;
+                star_Stage[10].GetComponent<Image>().sprite = staronimage;
+                star_Stage[11].GetComponent<Image>().sprite = staronimage;
+            }
+        }
+
+        //Worldnow2
+        else if (Worldnow == 2)
+        {
+            if (star[5] == 0)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[1].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[2].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[5] == 1)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staronimage;
+                star_Stage[1].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[2].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[5] == 2)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staronimage;
+                star_Stage[1].GetComponent<Image>().sprite = staronimage;
+                star_Stage[2].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[5] == 3)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staronimage;
+                star_Stage[1].GetComponent<Image>().sprite = staronimage;
+                star_Stage[2].GetComponent<Image>().sprite = staronimage;
+            }
+
+            if (star[6] == 0)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[4].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[5].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[6] == 1)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staronimage;
+                star_Stage[4].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[5].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[6] == 2)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staronimage;
+                star_Stage[4].GetComponent<Image>().sprite = staronimage;
+                star_Stage[5].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[6] == 3)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staronimage;
+                star_Stage[4].GetComponent<Image>().sprite = staronimage;
+                star_Stage[5].GetComponent<Image>().sprite = staronimage;
+            }
+
+            if (star[7] == 0)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[7].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[8].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[7] == 1)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staronimage;
+                star_Stage[7].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[8].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[7] == 2)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staronimage;
+                star_Stage[7].GetComponent<Image>().sprite = staronimage;
+                star_Stage[8].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[7] == 3)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staronimage;
+                star_Stage[7].GetComponent<Image>().sprite = staronimage;
+                star_Stage[8].GetComponent<Image>().sprite = staronimage;
+            }
+
+            if (star[8] == 0)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[10].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[11].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[8] == 1)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staronimage;
+                star_Stage[10].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[11].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[8] == 2)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staronimage;
+                star_Stage[10].GetComponent<Image>().sprite = staronimage;
+                star_Stage[11].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[8] == 3)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staronimage;
+                star_Stage[10].GetComponent<Image>().sprite = staronimage;
+                star_Stage[11].GetComponent<Image>().sprite = staronimage;
+            }
+        }
+        //Worldnow3
+        else if (Worldnow == 3)
+        {
+            if (star[9] == 0)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[1].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[2].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[9] == 1)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staronimage;
+                star_Stage[1].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[2].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[9] == 2)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staronimage;
+                star_Stage[1].GetComponent<Image>().sprite = staronimage;
+                star_Stage[2].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[9] == 3)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staronimage;
+                star_Stage[1].GetComponent<Image>().sprite = staronimage;
+                star_Stage[2].GetComponent<Image>().sprite = staronimage;
+            }
+
+            if (star[10] == 0)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[4].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[5].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[10] == 1)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staronimage;
+                star_Stage[4].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[5].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[10] == 2)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staronimage;
+                star_Stage[4].GetComponent<Image>().sprite = staronimage;
+                star_Stage[5].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[10] == 3)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staronimage;
+                star_Stage[4].GetComponent<Image>().sprite = staronimage;
+                star_Stage[5].GetComponent<Image>().sprite = staronimage;
+            }
+
+            if (star[11] == 0)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[7].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[8].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[11] == 1)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staronimage;
+                star_Stage[7].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[8].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[11] == 2)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staronimage;
+                star_Stage[7].GetComponent<Image>().sprite = staronimage;
+                star_Stage[8].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[11] == 3)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staronimage;
+                star_Stage[7].GetComponent<Image>().sprite = staronimage;
+                star_Stage[8].GetComponent<Image>().sprite = staronimage;
+            }
+
+            if (star[12] == 0)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[10].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[11].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[12] == 1)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staronimage;
+                star_Stage[10].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[11].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[12] == 2)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staronimage;
+                star_Stage[10].GetComponent<Image>().sprite = staronimage;
+                star_Stage[11].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[12] == 3)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staronimage;
+                star_Stage[10].GetComponent<Image>().sprite = staronimage;
+                star_Stage[11].GetComponent<Image>().sprite = staronimage;
+            }
+        }
+        //Worldnow4
+        else if (Worldnow == 4)
+        {
+            if (star[13] == 0)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[1].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[2].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[13] == 1)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staronimage;
+                star_Stage[1].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[2].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[13] == 2)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staronimage;
+                star_Stage[1].GetComponent<Image>().sprite = staronimage;
+                star_Stage[2].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[13] == 3)
+            {
+                star_Stage[0].GetComponent<Image>().sprite = staronimage;
+                star_Stage[1].GetComponent<Image>().sprite = staronimage;
+                star_Stage[2].GetComponent<Image>().sprite = staronimage;
+            }
+
+            if (star[14] == 0)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[4].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[5].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[14] == 1)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staronimage;
+                star_Stage[4].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[5].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[14] == 2)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staronimage;
+                star_Stage[4].GetComponent<Image>().sprite = staronimage;
+                star_Stage[5].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[14] == 3)
+            {
+                star_Stage[3].GetComponent<Image>().sprite = staronimage;
+                star_Stage[4].GetComponent<Image>().sprite = staronimage;
+                star_Stage[5].GetComponent<Image>().sprite = staronimage;
+            }
+
+            if (star[15] == 0)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[7].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[8].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[15] == 1)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staronimage;
+                star_Stage[7].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[8].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[15] == 2)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staronimage;
+                star_Stage[7].GetComponent<Image>().sprite = staronimage;
+                star_Stage[8].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[15] == 3)
+            {
+                star_Stage[6].GetComponent<Image>().sprite = staronimage;
+                star_Stage[7].GetComponent<Image>().sprite = staronimage;
+                star_Stage[8].GetComponent<Image>().sprite = staronimage;
+            }
+
+            if (star[16] == 0)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[10].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[11].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[16] == 1)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staronimage;
+                star_Stage[10].GetComponent<Image>().sprite = staroffimage;
+                star_Stage[11].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[16] == 2)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staronimage;
+                star_Stage[10].GetComponent<Image>().sprite = staronimage;
+                star_Stage[11].GetComponent<Image>().sprite = staroffimage;
+            }
+            else if (star[16] == 3)
+            {
+                star_Stage[9].GetComponent<Image>().sprite = staronimage;
+                star_Stage[10].GetComponent<Image>().sprite = staronimage;
+                star_Stage[11].GetComponent<Image>().sprite = staronimage;
+            }
+        }
+
+        //シーンchange
         if (Fade.m_bChage)
         {
             if (Worldnow == 1)

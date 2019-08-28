@@ -143,7 +143,7 @@ public class GC_main : MonoBehaviour
         Scorenum = 0;
         Stagestarnum = int.Parse(nowSceneName);
 
-        star[Stagestarnum] = PlayerPrefs.GetInt(NextSceneName, 0);
+        star[Stagestarnum] = PlayerPrefs.GetInt(nowSceneName, 0);
     }
 
     // Update is called once per frame
@@ -187,7 +187,7 @@ public class GC_main : MonoBehaviour
                 if (star[Stagestarnum] < Starnum)
                 {
                     star[Stagestarnum] = Starnum;
-                    PlayerPrefs.SetInt(NextSceneName, star[Stagestarnum]);
+                    PlayerPrefs.SetInt(nowSceneName, star[Stagestarnum]);
                     PlayerPrefs.Save();
                 }
                 break;
