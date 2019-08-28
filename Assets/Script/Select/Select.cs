@@ -56,6 +56,10 @@ public class Select : MonoBehaviour
     Fade Fade;
 
     public bool bScenechange;//true=Scenechange中
+
+
+    public int[] star = new int[17];
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,6 +68,11 @@ public class Select : MonoBehaviour
         Stagenow = 1;
         Arrowleft.SetActive(false);
         bScenechange = false;
+
+        for (int i = 1; i <= 16; i++)
+        {
+            star[i] = PlayerPrefs.GetInt(i.ToString(), 0);
+        }
     }
 
     // Update is called once per frame
@@ -80,7 +89,53 @@ public class Select : MonoBehaviour
 
         if (Fade.m_bChage)
         {
-            SceneManager.LoadScene("Gamemain");
+            if (Worldnow == 1)
+            {
+                if (Stagenow == 1)
+                    SceneManager.LoadScene("1");
+                if (Stagenow == 2)
+                    SceneManager.LoadScene("2");
+                if (Stagenow == 3)
+                    SceneManager.LoadScene("3");
+                if (Stagenow == 4)
+                    SceneManager.LoadScene("4");
+            }
+
+            if (Worldnow == 2)
+            {
+                if (Stagenow == 1)
+                    SceneManager.LoadScene("5");
+                if (Stagenow == 2)
+                    SceneManager.LoadScene("6");
+                if (Stagenow == 3)
+                    SceneManager.LoadScene("7");
+                if (Stagenow == 4)
+                    SceneManager.LoadScene("8");
+            }
+
+            if (Worldnow == 3)
+            {
+                if (Stagenow == 1)
+                    SceneManager.LoadScene("9");
+                if (Stagenow == 2)
+                    SceneManager.LoadScene("10");
+                if (Stagenow == 3)
+                    SceneManager.LoadScene("11");
+                if (Stagenow == 4)
+                    SceneManager.LoadScene("12");
+            }
+
+            if (Worldnow == 4)
+            {
+                if (Stagenow == 1)
+                    SceneManager.LoadScene("13");
+                if (Stagenow == 2)
+                    SceneManager.LoadScene("14");
+                if (Stagenow == 3)
+                    SceneManager.LoadScene("15");
+                if (Stagenow == 4)
+                    SceneManager.LoadScene("16");
+            }
 
         }
 
@@ -96,7 +151,7 @@ public class Select : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow) && Worldnow != 1 && bScenechange == false)
         {
             Worldnow -= 1;
-            if(Worldnow==1)
+            if (Worldnow == 1)
             {
                 Arrowleft.SetActive(false);
             }
@@ -107,7 +162,7 @@ public class Select : MonoBehaviour
             Arrowleft.SetActive(true);
         }
         //Stagetext関係
-        Stage_1text.text = Worldnow.ToString()+" ー 1";
+        Stage_1text.text = Worldnow.ToString() + " ー 1";
         Stage_2text.text = Worldnow.ToString() + " ー 2";
         Stage_3text.text = Worldnow.ToString() + " ー 3";
         Stage_4text.text = Worldnow.ToString() + " ー 4";
@@ -146,7 +201,7 @@ public class Select : MonoBehaviour
                 light_Stage3.GetComponent<Image>().sprite = lightonimage;
                 light_Stage2.GetComponent<Image>().sprite = lightoffimage;
                 light_Title.GetComponent<Image>().sprite = lightoffimage;
-                
+
                 Board_Stage3.GetComponent<Image>().sprite = Boardonimage;
                 Board_Stage2.GetComponent<Image>().sprite = Boardoffimage;
                 Board_Title.GetComponent<Image>().sprite = Boardoffimage;

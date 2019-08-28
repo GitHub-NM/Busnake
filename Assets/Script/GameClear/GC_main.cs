@@ -58,7 +58,7 @@ public class GC_main : MonoBehaviour
     [SerializeField]
     Sprite[] starSprites;
 
-    
+
     int Scorenum;
     int Starnum;
 
@@ -85,6 +85,8 @@ public class GC_main : MonoBehaviour
     [SerializeField]
     Fade Fade;
 
+    public string NextSceneName;
+
     public bool bScenechange;//true=Scenechange中
 
     [SerializeField]
@@ -92,6 +94,8 @@ public class GC_main : MonoBehaviour
 
     public float star3Time;
     public float star2Time;
+    public int[] star = new int[17];
+    int Stagestarnum;
 
     public enum lightpos
     {
@@ -137,6 +141,9 @@ public class GC_main : MonoBehaviour
 
         bScenechange = false;
         Scorenum = 0;
+        Stagestarnum = int.Parse(nowSceneName);
+
+        star[Stagestarnum] = PlayerPrefs.GetInt(NextSceneName, 0);
     }
 
     // Update is called once per frame
@@ -165,6 +172,8 @@ public class GC_main : MonoBehaviour
                 {
                     Starnum = 1;
                 }
+
+
                 break;
             case 1://Text(ゲームクリア)のpop
                 GCTextObj.SetActive(true);
@@ -173,6 +182,13 @@ public class GC_main : MonoBehaviour
                 if (timeStepText >= 1)
                 {
                     Order = 2;
+                }
+
+                if (star[Stagestarnum] < Starnum)
+                {
+                    star[Stagestarnum] = Starnum;
+                    PlayerPrefs.SetInt(NextSceneName, star[Stagestarnum]);
+                    PlayerPrefs.Save();
                 }
                 break;
 
@@ -276,7 +292,7 @@ public class GC_main : MonoBehaviour
                 }
                 if (Fade.m_bChage)
                 {
-                    //SceneManager.LoadScene();
+                    SceneManager.LoadScene(NextSceneName);
                 }
             }
             else if (lightposnow == lightpos.retry)
