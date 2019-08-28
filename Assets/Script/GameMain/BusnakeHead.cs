@@ -42,7 +42,7 @@ public class BusnakeHead : MonoBehaviour
         //初期化
         bTrigger = false;
         lerpValue = 0.0f;
-        lerpValueplus = 0.05f;
+        lerpValueplus = 1.0f;
         stateDirection = StateDirection.STATE_RIGHT;
         oldstateDirection = stateDirection;
         ImageSize = 32.0f;
@@ -88,7 +88,7 @@ public class BusnakeHead : MonoBehaviour
                 lerpValue = 0.0f;
             }
         }
-        else if (signManager.goal || !pause.bpop) return;
+        else if (bTrigger || signManager.goal || !pause.bpop) return;
 
         // キー入力待ち
         if (!bTrigger && Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
@@ -108,6 +108,8 @@ public class BusnakeHead : MonoBehaviour
 
             // トリガーON
             bTrigger = true;
+
+            return;
         }
         else if (!bTrigger && Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {//上
@@ -126,6 +128,7 @@ public class BusnakeHead : MonoBehaviour
 
             // トリガーON
             bTrigger = true;
+            return;
         }
 
         if (!bTrigger && Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
@@ -145,6 +148,7 @@ public class BusnakeHead : MonoBehaviour
 
             // トリガーON
             bTrigger = true;
+            return;
         }
         else if (!bTrigger && Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {//右
@@ -164,6 +168,7 @@ public class BusnakeHead : MonoBehaviour
             // トリガーON
             bTrigger = true;
 
+            return;
         }
     }
 

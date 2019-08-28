@@ -32,7 +32,7 @@ public class BusnakeBody : MonoBehaviour
         bTrigger = false;
         bTriggerleap = false;
         lerpValue = 0.0f;
-        lerpValueplus = 0.05f;
+        lerpValueplus = 1.0f;
         childgameObject.enabled = true;
     }
 
@@ -51,9 +51,22 @@ public class BusnakeBody : MonoBehaviour
         // 補完が終わるまで継続
         if (bTriggerleap)
         {
+            // 値が1.0f以上になったらやめる
+            if (lerpValue >= 1.0f)
+            {
+                // 正規化
+                lerpValue = 1.0f;
+                recttransform = Vector3.Lerp(q1, q2, lerpValue);
+                GetComponent<RectTransform>().localPosition = recttransform;
+
+                SavePos = GetComponent<RectTransform>().localPosition;
+
+                lerpValue = 0.0f;
+                bTriggerleap = false;
+            }
+
             if (!bTrigger)
             {
-                Debug.Log(name);
                 bTrigger = true;
 
                 // 体の先頭を分ける
@@ -64,14 +77,18 @@ public class BusnakeBody : MonoBehaviour
 
                     OldDirection = Direction;
                     Direction = (int)parentgameObject.GetComponent<BusnakeHead>().GetOldDirection();
+
                 }
                 else
                 {// 親のオブジェクトの向きを取得
                     q1 = new Vector3(recttransform.x, recttransform.y, recttransform.z);
                     q2 = new Vector3(parentgameObject.GetComponent<BusnakeBody>().SavePos.x, parentgameObject.GetComponent<BusnakeBody>().SavePos.y, parentgameObject.GetComponent<BusnakeBody>().SavePos.z);
 
+                    SavePos = GetComponent<RectTransform>().localPosition;
+
                     OldDirection = Direction;
                     Direction = parentgameObject.GetComponent<BusnakeBody>().OldDirection;
+
                 }
 
 
@@ -542,25 +559,11 @@ public class BusnakeBody : MonoBehaviour
             }
 
             // 値を足す
-            lerpValue += 0.05f;
+            lerpValue += lerpValueplus;
 
             // 線形補間
             recttransform = Vector3.Lerp(q1, q2, lerpValue);
             GetComponent<RectTransform>().localPosition = recttransform;
-
-            // 値が1.0f以上になったらやめる
-            if (lerpValue >= 1.0f)
-            {
-                // 正規化
-                lerpValue = 1.0f;
-                recttransform = Vector3.Lerp(q1, q2, lerpValue);
-                GetComponent<RectTransform>().localPosition = recttransform;
-
-                SavePos = GetComponent<RectTransform>().localPosition;
-
-                lerpValue = 0.0f;
-                bTriggerleap = false;
-            }
         }
         else
         {
