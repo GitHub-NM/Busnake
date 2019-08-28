@@ -15,6 +15,7 @@ public class Startlogo : MonoBehaviour
     float timeTextpop;
 
     public bool bStart;//true=Start演出中
+
     // Start is called before the first frame update
     void Start()
     {

@@ -1,25 +1,15 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: 91f9dd37de8691d45b739744ae9683f8
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -6470460504253458178
     second: 3_0
-=======
-guid: 9ab8e5b03789991479b1b6141b753860
-TextureImporter:
-  internalIDToNameTable: []
->>>>>>> e333b6cc5fa46858dbea9d46c61248687f9e8509
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
     mipMapMode: 0
-<<<<<<< HEAD
     enableMipMap: 0
-=======
-    enableMipMap: 1
->>>>>>> e333b6cc5fa46858dbea9d46c61248687f9e8509
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -47,7 +37,6 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-<<<<<<< HEAD
     wrapU: 1
     wrapV: 1
     wrapW: -1
@@ -55,15 +44,6 @@ TextureImporter:
   lightmap: 0
   compressionQuality: 50
   spriteMode: 2
-=======
-    wrapU: -1
-    wrapV: -1
-    wrapW: -1
-  nPOTScale: 1
-  lightmap: 0
-  compressionQuality: 50
-  spriteMode: 0
->>>>>>> e333b6cc5fa46858dbea9d46c61248687f9e8509
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -72,15 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-<<<<<<< HEAD
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
-=======
-  alphaIsTransparency: 0
-  spriteTessellationDetail: -1
-  textureType: 0
->>>>>>> e333b6cc5fa46858dbea9d46c61248687f9e8509
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -98,7 +72,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-<<<<<<< HEAD
   - serializedVersion: 2
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -139,7 +112,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41ef7599f1a01db45a7fae7992ca847d
+      spriteID: c124b0bff84d90748a2451ba8cfd7a8e
       internalID: -6470460504253458178
       vertices: []
       indices: 
@@ -148,16 +121,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e4f476bdbe28304a87df9e7a13662e8
-=======
-  spriteSheet:
-    serializedVersion: 2
-    sprites: []
-    outline: []
-    physicsShape: []
-    bones: []
-    spriteID: 
->>>>>>> e333b6cc5fa46858dbea9d46c61248687f9e8509
+    spriteID: 6ad01a9f238947646a6912b34eeb26c2
     internalID: 0
     vertices: []
     indices: 
