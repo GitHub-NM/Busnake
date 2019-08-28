@@ -23,6 +23,8 @@ public class BusnakeHead : MonoBehaviour
     public Vector3 recttransform;
     private float lerpValue;
     private float ImageSize;
+    private float time;
+    public bool   bInterbal;
 
     // クォータニオンの準備
     private Vector3 q1;
@@ -49,6 +51,7 @@ public class BusnakeHead : MonoBehaviour
         ImageSize = 32.0f;
         nMoveCnt = 0;
         child.enabled = true;
+        bInterbal = false;
 
         // ポジション宣言
         recttransform = GetComponent<RectTransform>().localPosition;
@@ -92,7 +95,7 @@ public class BusnakeHead : MonoBehaviour
         else if (bTrigger || signManager.goal || !pause.bpop || startlogo.bStart) return;
 
         // キー入力待ち
-        if (!bTrigger && Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+        if (!bInterbal && !bTrigger && Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {//下
             // 走行距離プラス
             nMoveCnt++;
@@ -110,9 +113,10 @@ public class BusnakeHead : MonoBehaviour
             // トリガーON
             bTrigger = true;
 
+            bInterbal = true;
             return;
         }
-        else if (!bTrigger && Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+        else if (!bInterbal && !bTrigger && Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {//上
             // 走行距離プラス
             nMoveCnt++;
@@ -129,10 +133,13 @@ public class BusnakeHead : MonoBehaviour
 
             // トリガーON
             bTrigger = true;
+
+            bInterbal = true;
+
             return;
         }
 
-        if (!bTrigger && Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        if (!bInterbal && !bTrigger && Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {//左
             // 走行距離プラス
             nMoveCnt++;
@@ -149,9 +156,12 @@ public class BusnakeHead : MonoBehaviour
 
             // トリガーON
             bTrigger = true;
+
+            bInterbal = true;
+
             return;
         }
-        else if (!bTrigger && Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        else if (!bInterbal && !bTrigger && Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {//右
             // 走行距離プラス
             nMoveCnt++;
@@ -169,8 +179,17 @@ public class BusnakeHead : MonoBehaviour
             // トリガーON
             bTrigger = true;
 
+            bInterbal = true;
+
             return;
         }
+
+        // 一回入力したらインターバルを置く
+        if (bInterbal)
+        {
+            bInterbal = false;
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

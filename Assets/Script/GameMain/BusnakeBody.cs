@@ -14,11 +14,11 @@ public class BusnakeBody : MonoBehaviour
     public float lerpValueplus;
     public int Direction;
     public int OldDirection;
+    public bool bTriggerleap;
 
     private Vector3 recttransform;
     private float lerpValue;
     private bool bTrigger;
-    private bool bTriggerleap;
 
     // クォータニオンの準備
     private Vector3 q1;
