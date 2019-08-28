@@ -23,7 +23,8 @@ public class Pause : MonoBehaviour
 
     [SerializeField]
     float timeBoardpop;
-
+    [SerializeField]
+    Fade Fade;
     //現在のScene取得(リトライ用)
     string nowSceneName;
 
@@ -56,7 +57,7 @@ public class Pause : MonoBehaviour
         endBoardpos = new Vector3(0, 0, 0);
         timeStepBoard = 0.0f;
 
-        bpop = false;
+        bpop = true;
         
         FadePataanim_Retry.SetActive(false);
         FadePataanim_Title.SetActive(false);
@@ -113,7 +114,11 @@ public class Pause : MonoBehaviour
                     if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                     {
                         FadePataanim_Retry.SetActive(true);
-                        SceneManager.LoadScene(nowSceneName);
+                        Fade.SetFade();
+                        if (Fade.m_bChage)
+                        {// Retryしたときのフラグを作る
+                            SceneManager.LoadScene(nowSceneName);
+                        }
                     }
                 }
                 else if (lightposnow == lightpos.title)
@@ -122,6 +127,7 @@ public class Pause : MonoBehaviour
                     if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                     {
                         FadePataanim_Title.SetActive(true);
+                        Fade.SetFade();
                         SceneManager.LoadScene("Title");
                     }
                 }

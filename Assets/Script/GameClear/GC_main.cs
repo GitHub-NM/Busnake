@@ -83,6 +83,8 @@ public class GC_main : MonoBehaviour
     float scoretimer;
     float startimer;
     // enum型の定義
+    [SerializeField]
+    Fade Fade;
     public enum lightpos
     {
         next,
@@ -261,6 +263,7 @@ public class GC_main : MonoBehaviour
                 if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                 {
                     FadePataanim_Title.SetActive(true);
+                    Fade.SetFade();
                     SceneManager.LoadScene("Title");
                 }
             }
