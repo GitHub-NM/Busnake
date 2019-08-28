@@ -13,6 +13,8 @@ public class Startlogo : MonoBehaviour
 
     [SerializeField]
     float timeTextpop;
+
+    public bool bStart;//true=Start演出中
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class Startlogo : MonoBehaviour
 
         timeStepText = 0.0f;
         this.gameObject.GetComponent<Image>().enabled=true;
+        bStart = true;
     }
 
     // Update is called once per frame
@@ -34,6 +37,7 @@ public class Startlogo : MonoBehaviour
         if (timeStepText >= 1.5)
         {
             this.gameObject.SetActive(false);
+            bStart = false;
         }
     }
 }

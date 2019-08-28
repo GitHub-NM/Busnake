@@ -1974,6 +1974,26 @@ PrefabInstance:
       propertyPath: Fade
       value: 
       objectReference: {fileID: 767875351}
+    - target: {fileID: 7856015616612815128, guid: ac0e8b5540e4e1c47851250d1c025035,
+        type: 3}
+      propertyPath: BusnakeHead
+      value: 
+      objectReference: {fileID: 1577482469}
+    - target: {fileID: 7856015616612815128, guid: ac0e8b5540e4e1c47851250d1c025035,
+        type: 3}
+      propertyPath: star3Time
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856015616612815128, guid: ac0e8b5540e4e1c47851250d1c025035,
+        type: 3}
+      propertyPath: star2Time
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856015616612815128, guid: ac0e8b5540e4e1c47851250d1c025035,
+        type: 3}
+      propertyPath: Scorenum
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0e8b5540e4e1c47851250d1c025035, type: 3}
 --- !u!1001 &8185299817588957646
@@ -1988,6 +2008,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: BusnakeObject
       objectReference: {fileID: 0}
+    - target: {fileID: 4118944557903769276, guid: a59060628f2976941be604d458fb8af4,
+        type: 3}
+      propertyPath: signManager
+      value: 
+      objectReference: {fileID: 1046480747}
+    - target: {fileID: 4118944557903769276, guid: a59060628f2976941be604d458fb8af4,
+        type: 3}
+      propertyPath: pause
+      value: 
+      objectReference: {fileID: 2142101779}
     - target: {fileID: 4118944557701374973, guid: a59060628f2976941be604d458fb8af4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2043,15 +2073,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4118944557903769276, guid: a59060628f2976941be604d458fb8af4,
-        type: 3}
-      propertyPath: signManager
-      value: 
-      objectReference: {fileID: 1046480747}
-    - target: {fileID: 4118944557903769276, guid: a59060628f2976941be604d458fb8af4,
-        type: 3}
-      propertyPath: pause
-      value: 
-      objectReference: {fileID: 2142101779}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a59060628f2976941be604d458fb8af4, type: 3}

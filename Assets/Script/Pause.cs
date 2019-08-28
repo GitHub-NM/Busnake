@@ -33,7 +33,8 @@ public class Pause : MonoBehaviour
     float Screenheight;
 
     public float timeStepBoard;
-    public bool bpop;
+    public bool bpop;//true=ポーズ中false=ポーズではない
+    public bool bScenechange;//true=Scenechange中
 
     public int Order;
     enum lightpos
@@ -61,6 +62,7 @@ public class Pause : MonoBehaviour
         
         FadePataanim_Retry.SetActive(false);
         FadePataanim_Title.SetActive(false);
+        bScenechange = false;
     }
 
     // Update is called once per frame
@@ -90,11 +92,11 @@ public class Pause : MonoBehaviour
 
             case 2:
                 //操作関係
-                if (Input.GetKeyDown(KeyCode.UpArrow) && lightposnow != lightpos.Back)
+                if (Input.GetKeyDown(KeyCode.UpArrow) && lightposnow != lightpos.Back&& bScenechange==false)
                 {
                     lightposnow -= 1;
                 }
-                else if (Input.GetKeyDown(KeyCode.DownArrow) && lightposnow != lightpos.title)
+                else if (Input.GetKeyDown(KeyCode.DownArrow) && lightposnow != lightpos.title && bScenechange == false)
                 {
                     lightposnow += 1;
                 }
@@ -102,7 +104,7 @@ public class Pause : MonoBehaviour
                 if (lightposnow == lightpos.Back)
                 {
                     lightObj.transform.localPosition = lightBackpos;
-                    if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
+                    if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space) )
                     {
                         
                         bpop = true;
@@ -111,15 +113,18 @@ public class Pause : MonoBehaviour
                 else if (lightposnow == lightpos.retry)
                 {
                     lightObj.transform.localPosition = lightretrypos;
-                    if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
+                    if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space) )
                     {
                         FadePataanim_Retry.SetActive(true);
                         Fade.SetFade();
+                        bScenechange = true;
+                    }
                         if (Fade.m_bChage)
                         {// Retryしたときのフラグを作る
                             SceneManager.LoadScene(nowSceneName);
                         }
-                    }
+                    
+
                 }
                 else if (lightposnow == lightpos.title)
                 {
@@ -128,6 +133,11 @@ public class Pause : MonoBehaviour
                     {
                         FadePataanim_Title.SetActive(true);
                         Fade.SetFade();
+                        bScenechange = true;
+
+                    }
+                    if (Fade.m_bChage)
+                    {
                         SceneManager.LoadScene("Title");
                     }
                 }
