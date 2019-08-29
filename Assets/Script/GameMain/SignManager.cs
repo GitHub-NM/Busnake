@@ -36,7 +36,6 @@ public class SignManager : MonoBehaviour
             // カウントが配列数と一緒だったらフラグを立てる
             if(signJudgs.Length == nCnt)
             {
-                Debug.Log("終わり");
                 goal = true;
             }
         }

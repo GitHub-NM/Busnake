@@ -97,6 +97,8 @@ public class GC_main : MonoBehaviour
     public int[] star = new int[17];
     int Stagestarnum;
 
+    public AudioSource[] AudioSource;
+
     public enum lightpos
     {
         next,
@@ -107,6 +109,8 @@ public class GC_main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioSource = gameObject.GetComponents<AudioSource>();
+
         initTextscal = new Vector3(0.2f, 0.2f, 0.2f);
         endTextscal = new Vector3(1.0f, 1.0f, 1.0f);
         timeStepText = 0.0f;
@@ -153,6 +157,7 @@ public class GC_main : MonoBehaviour
         {
 
             case 0:
+                AudioSource[3].Play();
 
                 if (SignManager.goal)
                 {
@@ -176,6 +181,7 @@ public class GC_main : MonoBehaviour
 
                 break;
             case 1://Text(ゲームクリア)のpop
+                AudioSource[1].Play();
                 GCTextObj.SetActive(true);
                 GCTextObj.transform.localScale = Vector3.Lerp(initTextscal, endTextscal, timeStepText);
                 timeStepText += Time.deltaTime / timeTextpop;
@@ -274,10 +280,13 @@ public class GC_main : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow) && lightposnow != lightpos.next && bScenechange == false)
             {
+                AudioSource[2].Play();
+
                 lightposnow -= 1;
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow) && lightposnow != lightpos.title && bScenechange == false)
             {
+                AudioSource[2].Play();
                 lightposnow += 1;
             }
 
@@ -286,6 +295,8 @@ public class GC_main : MonoBehaviour
                 GClightObj.transform.localPosition = GClightnextpos;
                 if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                 {
+                    AudioSource[0].Play();
+
                     FadePataanim_Next.SetActive(true);
                     Fade.SetFade();
                     bScenechange = true;
@@ -300,6 +311,8 @@ public class GC_main : MonoBehaviour
                 GClightObj.transform.localPosition = GClightretrypos;
                 if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                 {
+                    AudioSource[0].Play();
+
                     FadePataanim_Retry.SetActive(true);
                     Fade.SetFade();
                     bScenechange = true;
@@ -314,6 +327,8 @@ public class GC_main : MonoBehaviour
                 GClightObj.transform.localPosition = GClighttitlepos;
                 if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                 {
+                    AudioSource[0].Play();
+
                     FadePataanim_Title.SetActive(true);
                     Fade.SetFade();
                     bScenechange = true;

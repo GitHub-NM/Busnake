@@ -69,9 +69,14 @@ public class Select : MonoBehaviour
     [SerializeField]
     Sprite staroffimage;
 
+    public AudioSource[] AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        AudioSource = gameObject.GetComponents<AudioSource>();
+        AudioSource[0].Play();
+
         lightposnow = 0;
         Worldnow = 1;
         Stagenow = 1;
@@ -94,6 +99,8 @@ public class Select : MonoBehaviour
         //PCの入力モードが半角になっていないとSpaceKeyが反応しない
         if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
         {
+            AudioSource[1].Play();
+
             Fade.SetFade();
 
             bScenechange = true;
@@ -569,23 +576,31 @@ public class Select : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.UpArrow) && lightposnow != 0 && bScenechange == false)
         {
+            AudioSource[2].Play();
+
             lightposnow -= 1;
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && lightposnow != 4 && bScenechange == false)
         {
+            AudioSource[2].Play();
+
             lightposnow += 1;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow) && Worldnow != 1 && bScenechange == false)
         {
+            AudioSource[2].Play();
+
             Worldnow -= 1;
             if (Worldnow == 1)
             {
                 Arrowleft.SetActive(false);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && Worldnow != 4 && bScenechange == false)
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && Worldnow != 2 && bScenechange == false)
         {
+            AudioSource[2].Play();
+
             Worldnow += 1;
             Arrowleft.SetActive(true);
         }
@@ -644,6 +659,8 @@ public class Select : MonoBehaviour
 
                 if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                 {
+                    AudioSource[1].Play();
+
                     Fade.SetFade();
 
                     bScenechange = true;

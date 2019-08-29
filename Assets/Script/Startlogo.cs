@@ -16,9 +16,14 @@ public class Startlogo : MonoBehaviour
 
     public bool bStart;//true=Start演出中
 
+    public AudioSource[] AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        AudioSource = gameObject.GetComponents<AudioSource>();
+        AudioSource[0].Play();
+
         initTextscal = new Vector3(0.1f, 0.1f, 0.0f);
         endTextscal = new Vector3(0.6f, 0.6f, 0.0f);
 

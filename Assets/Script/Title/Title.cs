@@ -27,11 +27,17 @@ public class Title : MonoBehaviour
     [SerializeField]
     Fade Fade;
 
+    public AudioSource[] AudioSource;
+
     public bool bScenechange;//true=Scenechange中
 
     // Start is called before the first frame update
     void Start()
     {
+        AudioSource = gameObject.GetComponents<AudioSource>();
+        AudioSource[0].Play();
+        
+
         lightposnow = 0;
         Startlight.GetComponent<Image>().sprite = lightonimage;
         Endlight.GetComponent<Image>().sprite = lightoffimage;
@@ -48,6 +54,8 @@ public class Title : MonoBehaviour
         //PCの入力モードが半角になっていないとSpaceKeyが反応しない(かなしい)
         if (lightposnow == 0 && (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space)))
         {
+            AudioSource[1].Play();
+
             Fade.SetFade();
             bScenechange = true;
         }
@@ -64,11 +72,14 @@ public class Title : MonoBehaviour
 #elif UNITY_STANDALONE
     UnityEngine.Application.Quit();
 #endif
+            AudioSource[1].Play();
 
             Application.Quit();
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) && lightposnow != 0&& bScenechange==false)
         {
+            AudioSource[2].Play();
+
             lightposnow = 0;
             Startlight.GetComponent<Image>().sprite = lightonimage;
             Endlight.GetComponent<Image>().sprite = lightoffimage;
@@ -78,6 +89,8 @@ public class Title : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow) && lightposnow != 1 && bScenechange == false)
         {
+            AudioSource[2].Play();
+
             lightposnow = 1;
             Startlight.GetComponent<Image>().sprite = lightoffimage;
             Endlight.GetComponent<Image>().sprite = lightonimage;

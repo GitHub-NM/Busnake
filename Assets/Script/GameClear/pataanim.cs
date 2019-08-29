@@ -10,10 +10,15 @@ public class pataanim : MonoBehaviour
     float pataanim_speed = 5.0f;
 
     public bool patamugen;
+
+    public AudioSource AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        if(patamugen==true)
+        AudioSource = gameObject.GetComponent<AudioSource>();
+
+        if (patamugen==true)
         {
             pataanim_movenum = 2;
         }
@@ -32,6 +37,8 @@ public class pataanim : MonoBehaviour
                 }
                 else
                 {
+                    AudioSource.Play();
+
                     angle = -180f;
                     pataanim_movenum = 1;
                 }
@@ -43,6 +50,8 @@ public class pataanim : MonoBehaviour
                 }
                 else
                 {
+                    AudioSource.Play();
+
                     angle = 0f;
                 }
                 break;

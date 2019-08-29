@@ -19,6 +19,8 @@ public class BusnakeHead : MonoBehaviour
     public Pause pause;
     public Startlogo startlogo;
 
+    public AudioSource[] AudioSource;
+
     // private
     public Vector3 recttransform;
     private float lerpValue;
@@ -52,6 +54,8 @@ public class BusnakeHead : MonoBehaviour
         nMoveCnt = 0;
         child.enabled = true;
         bInterbal = false;
+
+        AudioSource = gameObject.GetComponents<AudioSource>();
 
         // ポジション宣言
         recttransform = GetComponent<RectTransform>().localPosition;
@@ -91,12 +95,15 @@ public class BusnakeHead : MonoBehaviour
                 bTrigger = false;
                 lerpValue = 0.0f;
             }
+
+            return;
         }
         else if (bTrigger || signManager.goal || !pause.bpop || startlogo.bStart) return;
 
         // キー入力待ち
         if (!bInterbal && !bTrigger && Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {//下
+            if (recttransform.y <= -200) return;
             // 走行距離プラス
             nMoveCnt++;
 
@@ -118,6 +125,8 @@ public class BusnakeHead : MonoBehaviour
         }
         else if (!bInterbal && !bTrigger && Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
         {//上
+            if (recttransform.y >= 200) return;
+
             // 走行距離プラス
             nMoveCnt++;
 
@@ -141,6 +150,8 @@ public class BusnakeHead : MonoBehaviour
 
         if (!bInterbal && !bTrigger && Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
         {//左
+            if (recttransform.x <= -380) return;
+            
             // 走行距離プラス
             nMoveCnt++;
 
@@ -163,6 +174,9 @@ public class BusnakeHead : MonoBehaviour
         }
         else if (!bInterbal && !bTrigger && Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {//右
+
+            if (recttransform.x >= 380) return;
+
             // 走行距離プラス
             nMoveCnt++;
 
@@ -197,6 +211,9 @@ public class BusnakeHead : MonoBehaviour
         // 動物のタグが付いたものと判定をとる
         if (collision.gameObject.tag == "Animals")
         {
+            // 音を再生する
+            AudioSource[0].Play();
+
             // 当たったオブジェクトを変更をかける
             collision.gameObject.GetComponent<BoxCollider2D>().enabled = false; // 判定を消す
             collision.gameObject.GetComponent<Image>().sprite = collision.gameObject.GetComponent<AnimalStack>().sprite[1];

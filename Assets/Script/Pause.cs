@@ -45,9 +45,13 @@ public class Pause : MonoBehaviour
     };
     lightpos lightposnow;
 
+    public AudioSource[] AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
+        AudioSource = gameObject.GetComponents<AudioSource>();
+
         lightObj.transform.localPosition = lightBackpos;
         //現在のScene名取得(リトライ用)
         nowSceneName = SceneManager.GetActiveScene().name;
@@ -73,6 +77,8 @@ public class Pause : MonoBehaviour
             case 0:
                 if (Input.GetKeyDown(KeyCode.P))
                 {
+                    AudioSource[0].Play();
+
                     Order = 1;
                     timeStepBoard = 0;
                     bpop = false;
@@ -94,10 +100,14 @@ public class Pause : MonoBehaviour
                 //操作関係
                 if (Input.GetKeyDown(KeyCode.UpArrow) && lightposnow != lightpos.Back&& bScenechange==false)
                 {
+                    AudioSource[2].Play();
+
                     lightposnow -= 1;
                 }
                 else if (Input.GetKeyDown(KeyCode.DownArrow) && lightposnow != lightpos.title && bScenechange == false)
                 {
+                    AudioSource[2].Play();
+
                     lightposnow += 1;
                 }
 
@@ -106,7 +116,8 @@ public class Pause : MonoBehaviour
                     lightObj.transform.localPosition = lightBackpos;
                     if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space) )
                     {
-                        
+                        AudioSource[1].Play();
+
                         bpop = true;
                     }
                 }
@@ -115,6 +126,8 @@ public class Pause : MonoBehaviour
                     lightObj.transform.localPosition = lightretrypos;
                     if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space) )
                     {
+                        AudioSource[1].Play();
+
                         FadePataanim_Retry.SetActive(true);
                         Fade.SetFade();
                         bScenechange = true;
@@ -131,6 +144,8 @@ public class Pause : MonoBehaviour
                     lightObj.transform.localPosition = lighttitlepos;
                     if (Input.GetKey(KeyCode.Return) || Input.GetKey(KeyCode.Space))
                     {
+                        AudioSource[1].Play();
+
                         FadePataanim_Title.SetActive(true);
                         Fade.SetFade();
                         bScenechange = true;
@@ -143,6 +158,8 @@ public class Pause : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.P))
                 {
+                    AudioSource[3].Play();
+
                     bpop = true;
 
 

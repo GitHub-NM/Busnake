@@ -10,6 +10,8 @@ public class SignJudg : MonoBehaviour
 
     public bool arrival;
 
+    public AudioSource[] AudioSource;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +20,8 @@ public class SignJudg : MonoBehaviour
 
         // 初期化
         arrival = false;
+
+        AudioSource = gameObject.GetComponents<AudioSource>();
 
     }
 
@@ -35,6 +39,9 @@ public class SignJudg : MonoBehaviour
             // 中身がないとき
             if (collision.gameObject.GetComponent<BusnakeHead>().bStack.stack.Count == 0)
             {
+                // 音再生
+                AudioSource[1].Play();
+
                 // バス停の近くのイメージを出す
                 GetComponentInChildren<SpriteChange>().GetComponentInChildren<offAnimal>().missarrival = true;
 
@@ -44,6 +51,9 @@ public class SignJudg : MonoBehaviour
             // スタックに入ってるのが一致したら
             if (nSignjudganimal == collision.gameObject.GetComponent<BusnakeHead>().bStack.stack.Peek().GetAnimals())
             {
+                // 音再生
+                AudioSource[0].Play();
+
                 // スタックから抜く
                 collision.gameObject.GetComponent<BusnakeHead>().bStack.stack.Peek().gameObject.GetComponent<Image>().enabled = false;
                 collision.gameObject.GetComponent<BusnakeHead>().bStack.stack.Pop();
@@ -61,6 +71,9 @@ public class SignJudg : MonoBehaviour
             }
             else if (collision.gameObject.GetComponent<BusnakeHead>().bStack.stack.Peek() == null)
             {
+                // 音再生
+                AudioSource[1].Play();
+
                 // バス停の近くのイメージを出す
                 GetComponentInChildren<SpriteChange>().GetComponentInChildren<offAnimal>().missarrival = true;
 
@@ -68,6 +81,9 @@ public class SignJudg : MonoBehaviour
             }
             else
             {
+                // 音再生
+                AudioSource[1].Play();
+
                 // バス停の近くのイメージを出す
                 GetComponentInChildren<SpriteChange>().GetComponentInChildren<offAnimal>().missarrival = true;
 
